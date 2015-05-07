@@ -7,6 +7,8 @@ class AMOS < FPM::Cookery::Recipe
   source "https://swift.rc.nectar.org.au:8888/v1/AUTH_809/Tools/amos-#{version}.tar.gz"
   md5 '51ebe835c93eef9acd39101738b2048c'
 
+  build_depends ['gcc', 'autoconf']
+
   def build
     configure :prefix => prefix,
       :enable_minimus => false
