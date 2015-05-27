@@ -1,6 +1,6 @@
 class IGVTools < FPM::Cookery::Recipe
   description 'The igvtools utility provides a set of tools for pre-processing data files. '
-  name 'igvtoos'
+  name 'igvtools'
   version '2.3.40' 
   revision 0
   homepage 'https://www.broadinstitute.org/igv/igvtools'
