@@ -12,6 +12,25 @@ class RBase < FPM::Cookery::Recipe
   def build
     configure :prefix => prefix
     make
+    
+    File.open('additional.R', 'w', 0755) do |f|
+      f.write <<-__EOF
+source("http://bioconductor.org/biocLite.R")
+biocLite("DESeq2")
+biocLite("edgeR")
+biocLite("cummeRbund")
+install.packages(pkgs="gplots",repos="http://cran.csiro.au/")
+      __EOF
+    end
+
+    File.open('additional.sh', 'w', 0755) do |f|
+      f.write <<-__EOF
+#!/bin/bash
+#{builddir}/R-#{version}/bin/R CMD BATCH additional.R
+      __EOF
+    end
+
+    safesystem 'bash', './additional.sh'
   end
 
   def install
