@@ -14,7 +14,7 @@ class MACS < FPM::Cookery::Recipe
     linktarget = bin('macs')
     with_trueprefix do
       safesystem "python setup.py install --root #{destdir} --prefix #{prefix} --install-layout deb"
-      ln_s prefix('bin/macs14'), linktarget
+      ln_s 'macs14', linktarget
     end
   end
 end
