@@ -1,7 +1,7 @@
 class Velvet < FPM::Cookery::Recipe
   description 'Sequence assembler for very short reads.'
   name 'velvet'
-  version '1.2.10' 
+  version '1.2.10'
   revision 0
   homepage 'https://www.ebi.ac.uk/~zerbino/velvet/'
   source "https://swift.rc.nectar.org.au:8888/v1/AUTH_809/Tools/velvet_#{version}.tgz"
@@ -9,10 +9,13 @@ class Velvet < FPM::Cookery::Recipe
 
   def build
     safesystem "make 'MAXKMERLENGTH=59' 'LONGSEQUENCES=1' 'OPENMP=1'"
-    safesystem "make 'MAXKMERLENGTH=59' 'LONGSEQUENCES=1' 'OPENMP=1' color"
   end
 
   def install
-    bin.install ['velvetg', 'velveth', 'velvetg_de', 'velveth_de']
+    velvetg_long = bin('velvetg_long')
+    velveth_long = bin('velveth_long')
+    bin.install ['velvetg', 'velveth']
+    ln_s 'velvetg', velvetg_long
+    ln_s 'velveth', velveth_long
   end
 end
