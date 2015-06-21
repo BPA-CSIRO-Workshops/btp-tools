@@ -13,6 +13,7 @@ class FastQC < FPM::Cookery::Recipe
   def install
     Dir.chdir "FastQC" do
       bin.install ['fastqc']
+      chmod 0755, bin('fastqc')
     end
   end
 end
