@@ -11,8 +11,15 @@ class FastQC < FPM::Cookery::Recipe
   end
 
   def install
+    bin.mkdir
     prefix('local/fastqc').mkdir
-    prefix('local/fastqc').install Dir['FastQC/*'] 
+    cp_r Dir['FastQC/*'], prefix('local/fastqc').to_s
     chmod 0755, prefix('local/fastqc/fastqc')
+
+    link_target = bin('fastqc')
+
+    with_trueprefix do
+      ln_s prefix('local/fastqc/fastqc'), link_target
+    end
   end
 end
