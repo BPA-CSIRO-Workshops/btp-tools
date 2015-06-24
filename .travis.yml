@@ -1,4 +1,5 @@
 language: ruby
+sudo: required
 rvm:
   - 1.9.3
 before_install: sudo gem install fpm-cookery
