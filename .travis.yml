@@ -3,7 +3,8 @@ rvm:
   - 1.9.3
 install: gem install fpm-cookery
 script:
-  - find ./ -maxdepth 1 -type d -exec sh -c 'cd "$0" && fpm-cook' {} \;
+  - cd cufflinks && sudo fpm-cook
+#  - find ./ -maxdepth 1 -type d -exec sh -c 'cd "$0" && fpm-cook' {} \;
 #  - cd amos && fpm-cook
 
 # deb packages are created under ./*/pkg/*.deb
