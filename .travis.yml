@@ -2,9 +2,9 @@ language: ruby
 sudo: required
 rvm:
   - 1.9.3
-before_install: sudo -E gem install fpm-cookery
+before_install: sudo gem install fpm-cookery
 script:
-  - cd cufflinks && sudo -E fpm-cook
+  - cd cufflinks && sudo fpm-cook clean && sudo fpm-cook
 #  - find ./ -maxdepth 1 -type d -exec sh -c 'cd "$0" && fpm-cook' {} \;
 #  - cd amos && fpm-cook
 
