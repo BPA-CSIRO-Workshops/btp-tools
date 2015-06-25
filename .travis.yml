@@ -3,10 +3,6 @@ sudo: required
 rvm:
   - 1.9.3
 before_install: 
-  - sudo echo $PATH
-  - sudo $(which rvm) rubygems current
-  - sudo $(which gem) install rubygems-bundler
-  - sudo $(which gem) install executable-hooks
   - sudo $(which gem) install fpm-cookery
 script:
   - cd cufflinks && sudo $(which fpm-cook) clean && sudo $(which fpm-cook)
