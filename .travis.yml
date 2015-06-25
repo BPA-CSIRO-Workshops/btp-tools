@@ -6,7 +6,7 @@ before_install:
   - sudo $(which gem) install fpm-cookery
   - sudo $(which gem) install executable-hooks
 script:
-  - cd cufflinks && sudo PATH=$PATH -E bundle exec fpm-cook
+  - cd cufflinks && sudo PATH=$PATH -E $(which bundle) exec fpm-cook
 #  - find ./ -maxdepth 1 -type d -exec sh -c 'cd "$0" && fpm-cook' {} \;
 #  - cd amos && fpm-cook
 
