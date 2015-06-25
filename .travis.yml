@@ -6,7 +6,7 @@ before_install:
   - sudo $(which rvm) rubygems current
   - sudo $(which gem) install fpm-cookery
 script:
-  - cd cufflinks && sudo fpm-cook clean && sudo fpm-cook
+  - cd cufflinks && sudo $(which fpm-cook) clean && sudo $(which fpm-cook)
 #  - find ./ -maxdepth 1 -type d -exec sh -c 'cd "$0" && fpm-cook' {} \;
 #  - cd amos && fpm-cook
 
