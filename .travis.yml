@@ -10,7 +10,8 @@ before_install:
 
 script:
   - fpm-cook --help
-  - fpm-cook cufflinks/recipe.rb
+  - cd cufflinks && fpm-cook --debug && cd
+  - cd amos && fpm-cook --debug && cd
 #  - cd cufflinks && sudo PATH=$PATH -E $(which bundle) exec fpm-cook
 #  - find ./ -maxdepth 1 -type d -exec sh -c 'cd "$0" && fpm-cook' {} \;
 #  - cd amos && fpm-cook
