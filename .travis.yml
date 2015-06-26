@@ -9,6 +9,7 @@ before_install:
   - gem install fpm-cookery
 
 script:
+  - fpm-cook --help
   - fpm-cook cufflinks/recipe.rb
 #  - cd cufflinks && sudo PATH=$PATH -E $(which bundle) exec fpm-cook
 #  - find ./ -maxdepth 1 -type d -exec sh -c 'cd "$0" && fpm-cook' {} \;
