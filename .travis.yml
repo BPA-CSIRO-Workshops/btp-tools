@@ -6,6 +6,7 @@ rvm:
 
 before_install:
   - gem install fpm-cookery
+  - gem install executable-hooks
 
 script:
   - fpm-cook --help
