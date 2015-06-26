@@ -1,19 +1,16 @@
 language: ruby
-sudo: required
+
 rvm:
   - 1.9.3
+  - 2.0
   - 2.2
+
 before_install:
-  - gem update --system 1.8.11
-  - gem --version
   - gem install fpm-cookery
+
 script:
-  - which bundle
-  - which fpm-cook
-  - which gem
-  - which bundle
-  - bundle exec fpm-cook --version
-  - cd cufflinks && sudo PATH=$PATH -E $(which bundle) exec fpm-cook
+  - fpm-cook ./cufflinks/recipe.rb
+#  - cd cufflinks && sudo PATH=$PATH -E $(which bundle) exec fpm-cook
 #  - find ./ -maxdepth 1 -type d -exec sh -c 'cd "$0" && fpm-cook' {} \;
 #  - cd amos && fpm-cook
 
