@@ -9,10 +9,12 @@ before_install:
   - rvm --version
   - rvm get stable
   - rvm --version
+  - gem install fpm-cookery
 
 install:
-  - fpm-cook --help
   - which fpm-cook
+  - sudo which fpm-cook
+  - fpm-cook --help
   - find ./ -mindepth 1 -maxdepth 1 -type d -exec sh -c 'cd "$0" && fpm-cook --debug' {} \;
 
 # deb packages are created under ./*/pkg/*.deb
