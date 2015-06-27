@@ -12,6 +12,7 @@ before_install:
   - rvm --version
   - gem install fpm-cookery
   - gem install executable-hooks
+  - gem regenerate_binstubs
 
 install:
   - which fpm-cook
