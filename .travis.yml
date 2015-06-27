@@ -9,7 +9,7 @@ before_install:
   - gem install executable-hooks
   - gem regenerate_binstubs
 
-script:
+install:
   - fpm-cook --help
   - which fpm-cook
   - find ./ -mindepth 1 -maxdepth 1 -type d -exec sh -c 'cd "$0" && sudo $(which fpm-cook) install-deps && fpm-cook --debug' {} \;
