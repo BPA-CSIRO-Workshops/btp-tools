@@ -17,6 +17,7 @@ before_install:
 install:
   - which fpm-cook
   - which ruby_executable_hooks
+  - ls -1 /home/travis/.rvm/gems/ruby-1.9.3-p551/
   - fpm-cook --help
   - cd cufflinks; sudo -E $(which fpm-cook) --debug; cd ../
   - cd igv; sudo -E $(which fpm-cook) --debug; cd ../
