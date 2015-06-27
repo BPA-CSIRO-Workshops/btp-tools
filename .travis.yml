@@ -13,8 +13,9 @@ before_install:
 
 install:
   - which fpm-cook
-  - sudo which fpm-cook
   - fpm-cook --help
-  - find ./ -mindepth 1 -maxdepth 1 -type d -exec sh -c 'cd "$0" && fpm-cook --debug' {} \;
+  - cd cufflinks; fpm-cook --debug; cd ../
+  - cd igv; fpm-cook --debug; cd ../
+#  - find ./ -mindepth 1 -maxdepth 1 -type d -exec sh -c 'cd "$0" && fpm-cook --debug' {} \;
 
 # deb packages are created under ./*/pkg/*.deb
