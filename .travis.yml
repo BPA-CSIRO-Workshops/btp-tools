@@ -12,8 +12,8 @@ before_install:
   - gem install executable-hooks
 
 install:
-  - cd cufflinks; rvmsudo fpm-cook --debug; cd ../
-  - cd igv; rvmsudo fpm-cook --debug; cd ../
+  - cd cufflinks; rvmsudo $(which fpm-cook) --debug; cd ../
+  - cd igv; rvmsudo $(which fpm-cook) --debug; cd ../
 #  - find ./ -mindepth 1 -maxdepth 1 -type d -exec sh -c 'cd "$0" && fpm-cook --debug' {} \;
 
 # deb packages are created under ./*/pkg/*.deb
