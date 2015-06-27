@@ -5,22 +5,12 @@ rvm:
   - 2.0
 
 before_install:
-  - rvm use system
-  - ruby --version
-  - rvm --version
-  - rvm get stable
-  - rvm --version
   - gem install fpm-cookery
   - gem install executable-hooks
-  - gem regenerate_binstubs
 
 install:
-  - which fpm-cook
-  - which ruby_executable_hooks
-  - ls -1 /home/travis/.rvm/gems/ruby-1.9.3-p551/{bin,wrappers}
-  - fpm-cook --help
-  - cd cufflinks; sudo -E $(which fpm-cook) --debug; cd ../
-  - cd igv; sudo -E $(which fpm-cook) --debug; cd ../
+  - cd cufflinks; rvmsudo fpm-cook --debug; cd ../
+  - cd igv; rvmsudo fpm-cook --debug; cd ../
 #  - find ./ -mindepth 1 -maxdepth 1 -type d -exec sh -c 'cd "$0" && fpm-cook --debug' {} \;
 
 # deb packages are created under ./*/pkg/*.deb
