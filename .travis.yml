@@ -10,6 +10,7 @@ before_install:
   - rvm get stable
   - rvm --version
   - gem install fpm-cookery
+  - gem install executable_hooks
 
 install:
   - which fpm-cook
