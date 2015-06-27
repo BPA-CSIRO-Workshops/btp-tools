@@ -14,9 +14,10 @@ before_install:
 
 install:
   - which fpm-cook
+  - which ruby_executable_hooks
   - fpm-cook --help
   - cd cufflinks; sudo $(which fpm-cook) --debug; cd ../
-  - cd igv; $(which fpm-cook) --debug; cd ../
+  - cd igv; sudo $(which fpm-cook) --debug; cd ../
 #  - find ./ -mindepth 1 -maxdepth 1 -type d -exec sh -c 'cd "$0" && fpm-cook --debug' {} \;
 
 # deb packages are created under ./*/pkg/*.deb
