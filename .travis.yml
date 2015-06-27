@@ -10,7 +10,6 @@ env:
 before_install:
   - gem install fpm-cookery
   - gem install executable-hooks
-  - cat /etc/sudoers
 
 install:
   - cd cufflinks; rvmsudo fpm-cook --debug; cd ../
