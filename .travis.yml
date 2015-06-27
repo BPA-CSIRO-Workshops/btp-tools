@@ -5,6 +5,7 @@ rvm:
   - 2.0
 
 before_install:
+  - rvm use system
   - ruby --version
   - rvm --version
   - rvm get stable
