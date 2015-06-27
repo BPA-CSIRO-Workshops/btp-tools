@@ -5,13 +5,14 @@ rvm:
   - 2.0
 
 before_install:
-  - gem install fpm-cookery
-  - gem install executable-hooks
-  - gem regenerate_binstubs
+  - ruby --version
+  - rvm --version
+  - rvm get stable
+  - rvm --version
 
 install:
   - fpm-cook --help
   - which fpm-cook
-  - find ./ -mindepth 1 -maxdepth 1 -type d -exec sh -c 'cd "$0" && sudo $(which fpm-cook) install-deps && fpm-cook --debug' {} \;
+  - find ./ -mindepth 1 -maxdepth 1 -type d -exec sh -c 'cd "$0" && fpm-cook --debug' {} \;
 
 # deb packages are created under ./*/pkg/*.deb
