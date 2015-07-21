@@ -38,4 +38,9 @@ A convienient way to build `deb` packages for all the tools:
 ```bash
 find ./ -maxdepth 1 -type d -exec sh -c 'cd "$0" && fpm-cook' {} \;
 ```
-
+License
+=======
+The contents of this repository are released under the Creative Commons
+Attribution 3.0 Unported License. For a summary of what this means,
+please see:
+http://creativecommons.org/licenses/by/3.0/deed.en_GB
