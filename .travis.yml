@@ -10,6 +10,6 @@ before_install:
   - gem install fpm-cookery
   - gem install executable-hooks
 script:
-  - find ./ -mindepth 1 -maxdepth 1 -type d | while read tool; do echo -e "Building deb for ${tool}\n##########"; cd "${tool}"; rvmsudo $(which fpm-cook) --debug; cd ../; done
+  - cd amos; rvmsudo $(which fpm-cook) --debug;
 
 # deb packages are created under ./*/pkg/*.deb
