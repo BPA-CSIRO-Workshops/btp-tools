@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#if [[ $TRAVIS_BRANCH == 'master' ]]
+#  # Do a master branch specific build
+#
+#else
+#  # Do a different build for a branch
+#
+#fi
+
+# Only build packages if the recipe.rb was modified in the commit(s) which triggered the build
+git --no-pager diff --name-only ${TRAVIS_COMMIT_RANGE##*...} ${TRAVIS_COMMIT_RANGE%...*} | fgrep recipe.rb | while read recipe; do
+  rvmsudo $(which fpm-cook) package --target deb --platform ubuntu --pkg-dir ./pkg "${recipe}" || exit
+done
+
