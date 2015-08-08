@@ -1,11 +1,11 @@
 class UCSCTools < FPM::Cookery::Recipe
   description 'UCSC Tools.'
   name 'ucsctools'
-  version '310' 
+  version '319' 
   revision 0
   homepage 'http://hgdownload.cse.ucsc.edu/admin/exe/'
   source "http://hgdownload.soe.ucsc.edu/admin/exe/userApps.v#{version}.src.tgz"
-  md5 '718d5368cca8aee08961489d987b1be5'
+  md5 '68bbe3de3377d82ae0711653cc302d1e'
 
   def build
     make
