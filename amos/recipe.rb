@@ -4,7 +4,7 @@ class AMOS < FPM::Cookery::Recipe
   version '3.1.0' 
   revision 0
   homepage 'http://sourceforge.net/projects/amos/'
-  source "https://swift.rc.nectar.org.au:8888/v1/AUTH_809/Tools/amos-#{version}.tar.gz"
+  source "http://sourceforge.net/projects/amos/files/amos/#{version}/amos-#{version}.tar.gz"
   md5 '51ebe835c93eef9acd39101738b2048c'
 
   build_depends ['gcc', 'autoconf']
