@@ -4,7 +4,7 @@ class Cufflinks < FPM::Cookery::Recipe
   version '2.2.1' 
   revision 0
   homepage 'http://cole-trapnell-lab.github.io/cufflinks/'
-  source "https://swift.rc.nectar.org.au:8888/v1/AUTH_809/Tools/cufflinks-#{version}.tar.gz"
+  source "http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/cufflinks-#{version}.tar.gz"
   md5 '9a5ba7a7710cd864932cf205c17851f0'
   
   build_depends ['libeigen3-dev', 'libeigen3-doc']
