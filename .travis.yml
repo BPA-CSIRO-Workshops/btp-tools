@@ -10,6 +10,7 @@ before_install:
   - gem install fpm-cookery
   - gem install executable-hooks
 script:
-  - cd amos; rvmsudo $(which fpm-cook) --debug;
+  - find ./ -maxdepth 2 -type f -name recipe.rb | while read recipe; do rvmsudo $(which fpm-cook) package --target deb --platform ubuntu --pkg-dir ./pkg "${recipe}" || exit; done
+#  - cd amos; rvmsudo $(which fpm-cook) --debug;
 
 # deb packages are created under ./*/pkg/*.deb
