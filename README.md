@@ -27,8 +27,7 @@ Once you have cloned this repository, you can start building the `deb` packages 
 
 ```bash
 # Build the AMOS .deb
-cd amos
-fpm-cook
+fpm-cook package --target deb --platform ubuntu --pkg-dir ./pkg ./amos/recipe.rb
 # You should now have a .deb file for AMOS
 ls pkg/*.deb
 ```
@@ -36,7 +35,7 @@ ls pkg/*.deb
 A convienient way to build `deb` packages for all the tools:
 
 ```bash
-find ./ -maxdepth 1 -type d -exec sh -c 'cd "$0" && fpm-cook' {} \;
+find ./ -maxdepth 2 -type f -name recipe.rb -exec fpm-cook package --target deb --platform ubuntu --pkg-dir ./pkg {} \;
 ```
 License
 =======

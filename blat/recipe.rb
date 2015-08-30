@@ -4,7 +4,7 @@ class Blat < FPM::Cookery::Recipe
   version '35' 
   revision 0
   homepage 'https://genome.ucsc.edu/FAQ/FAQblat.html'
-  source "https://swift.rc.nectar.org.au:8888/v1/AUTH_809/Tools/blatSrc#{version}.zip"
+  source "https://users.soe.ucsc.edu/~kent/src/blatSrc#{version}.zip"
   md5 '16e546b8843b85e0b0f2fa603cd78724'
 
   def build

@@ -4,7 +4,7 @@ class Bowtie < FPM::Cookery::Recipe
   version '1.1.1' 
   revision 0
   homepage 'http://bowtie-bio.sourceforge.net/index.shtml'
-  source "https://swift.rc.nectar.org.au:8888/v1/AUTH_809/Tools/bowtie-#{version}-src.zip"
+  source "http://sourceforge.net/projects/bowtie-bio/files/bowtie/#{version}/bowtie-#{version}-src.zip"
   md5 'ba4f40528e4eb38976a7ed4bf7c12ca6'
 
   def build
