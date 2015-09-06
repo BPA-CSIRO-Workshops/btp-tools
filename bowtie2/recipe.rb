@@ -7,6 +7,8 @@ class Bowtie2 < FPM::Cookery::Recipe
   source "http://sourceforge.net/projects/bowtie-bio/files/bowtie2/#{version}/bowtie2-#{version}-source.zip"
   md5 'd31294875092e76ebb061eadc7998582'
 
+  build_depends ['g++', 'unzip', 'wget']
+
   def build
     Dir.chdir "bowtie2-#{version}" do
       make
