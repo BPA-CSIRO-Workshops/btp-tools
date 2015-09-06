@@ -40,7 +40,7 @@ fi
 
 cd $install_dir/$tool_name
 
-if [ ! -e amos-3.1.0.tar.gz ]; then
+if [ ! -f amos-3.1.0.tar.gz ]; then
   wget -4 --no-check-certificate $tool_location
 fi
 

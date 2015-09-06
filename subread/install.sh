@@ -33,7 +33,7 @@ fi
 
 cd $install_dir/$tool_name
 
-if [ ! -e subread-1.4.6-p4-source.tar.gz ]; then
+if [ ! -f subread-1.4.6-p4-source.tar.gz ]; then
   wget -4 --no-check-certificate $tool_location
 fi
 
