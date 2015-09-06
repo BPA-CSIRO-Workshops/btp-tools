@@ -7,11 +7,12 @@ class AMOS < FPM::Cookery::Recipe
   source "http://sourceforge.net/projects/amos/files/amos/#{version}/amos-#{version}.tar.gz"
   md5 '51ebe835c93eef9acd39101738b2048c'
 
-  build_depends ['gcc', 'autoconf']
+  build_depends ['make', 'g++', 'libboost1.54-all-dev', 'libqt4-dev', 'libxml-perl', 'libdbi-perl', 'libstatistics-descriptive-perl']
 
   def build
+    safesystem 'sed -i "1i#include <getopt.h>" src/Align/find-tandem.cc'
     configure :prefix => prefix,
-      :enable_minimus => false
+      :enable_minimus => 'no'
     make
   end
 

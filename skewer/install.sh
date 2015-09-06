@@ -8,7 +8,9 @@ tool_name='skewer'
 ## Dependencies ##
 ##################
 dependencies=(git make g++)
+apt-get update
 apt-get install -y ${dependencies[@]}
+apt-get clean
 
 ############
 ## Skewer ##
