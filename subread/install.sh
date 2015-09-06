@@ -16,7 +16,7 @@ function md5check {
 ##################
 ## Dependencies ##
 ##################
-dependencies=(make gcc zlib1g zlib1g-dev)
+dependencies=(make gcc zlib1g zlib1g-dev wget)
 apt-get update
 apt-get install -y ${dependencies[@]}
 apt-get clean
