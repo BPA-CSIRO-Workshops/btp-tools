@@ -17,13 +17,6 @@ function md5check {
 ## Dependencies ##
 ##################
 dependencies=(make g++ libboost-all-dev libqt4-dev libxml-perl libdbi-perl libstatistics-descriptive-perl)
-
-if [ `lsb_release -sr`='14.04' ]; then
-  packages=(${packages[*]} libboost1.54-all-dev)
-else
-  packages=(${packages[*]} libboost1.48-all-dev)
-fi
-
 apt-get update
 apt-get install -y ${dependencies[@]}
 apt-get clean
