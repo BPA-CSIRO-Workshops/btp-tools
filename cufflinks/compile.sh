@@ -1,9 +1,9 @@
 #!/bin/bash
 
 install_dir='/usr/local/tools'
-tool_location='http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/cufflinks-2.2.1.Linux_x86_64.tar.gz'
+tool_location='http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/cufflinks-2.2.1.tar.gz'
 tool_name='cufflinks'
-md5='7e693d182dcfda8aeef8523219ea9ea7'
+md5='9a5ba7a7710cd864932cf205c17851f0'
 
 function md5check {
   md5sum -c - <<< "$1 $2"
@@ -16,7 +16,7 @@ function md5check {
 ##################
 ## Dependencies ##
 ##################
-dependencies=(wget)
+dependencies=(g++ python libboost-all-dev libeigen3-dev)
 apt-get update
 apt-get install -y ${dependencies[@]}
 apt-get clean
@@ -33,19 +33,24 @@ fi
 
 cd $install_dir/$tool_name
 
-if [ ! -f cufflinks-2.2.1.Linux_x86_64.tar.gz ]; then
+if [ ! -f cufflinks-2.2.1.tar.gz ]; then
   wget -4 --no-check-certificate $tool_location
 fi
 
-md5check $md5 cufflinks-2.2.1.Linux_x86_64.tar.gz
-tar -xzf cufflinks-2.2.1.Linux_x86_64.tar.gz
+md5check $md5 cufflinks-2.2.1.tar.gz
+tar -xzf cufflinks-2.2.1.tar.gz
 
-# Install
-mkdir default
-mv cufflinks-2.2.1.Linux_x86_64 default/bin
+# Compile
+cd cufflinks-2.2.1/
+cp -r /usr/include/eigen3/Eigen /usr/include/
+./configure --prefix=$install_dir/$tool_name/default --with-bam=$install_dir/samtools/default --with-boost=/usr/
+make all
+make install
 
 # Cleanup
-rm cufflinks-2.2.1.Linux_x86_64.tar.gz
+cd ../
+rm -r cufflinks-2.2.1/
+rm cufflinks-2.2.1.tar.gz
 ####################
 
 #################
