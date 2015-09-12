@@ -4,10 +4,10 @@ class FASTXToolkit < FPM::Cookery::Recipe
   version '0.0.14' 
   revision 0
   homepage 'http://hannonlab.cshl.edu/fastx_toolkit/'
-  source "https://swift.rc.nectar.org.au:8888/v1/AUTH_809/Tools/fastx_toolkit-#{version}.tar.bz2"
+  source "https://github.com/agordon/fastx_toolkit/releases/download/#{version}/fastx_toolkit-#{version}.tar.bz2"
   md5 'bf1993c898626bb147de3d6695c20b40'
 
-  build_depends ['curl']
+  build_depends ['curl', 'gcc', 'g++', 'pkg-config', 'wget', 'libgtextutils-dev']
 
   def build
     configure :prefix => prefix
