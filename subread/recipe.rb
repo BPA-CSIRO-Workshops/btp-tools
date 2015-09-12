@@ -7,6 +7,8 @@ class Subread < FPM::Cookery::Recipe
   source "http://sourceforge.net/projects/subread/files/subread-1.4.6-p4/subread-#{version}-source.tar.gz"
   md5 '18a6f9af69a5825651f32148b44f1919'
 
+  build_depends ['curl']
+
   def build
     Dir.chdir "src" do
       safesystem 'make -f Makefile.Linux'

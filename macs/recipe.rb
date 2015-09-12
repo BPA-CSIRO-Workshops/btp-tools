@@ -7,6 +7,8 @@ class MACS < FPM::Cookery::Recipe
   source "https://swift.rc.nectar.org.au:8888/v1/AUTH_809/Tools/MACS-#{version}-1.tar.gz"
   md5 '950dab09fe1335c8bbb34a896c21e3e2'
 
+  build_depends ['curl']
+
   def build
   end
 

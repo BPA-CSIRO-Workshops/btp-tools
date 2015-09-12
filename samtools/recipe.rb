@@ -7,7 +7,7 @@ class SAMtools < FPM::Cookery::Recipe
   source "http://sourceforge.net/projects/samtools/files/samtools/#{version}/samtools-#{version}.tar.bz2"
   md5 '71dab132e21c0766f0de84c2371a9157'
 
-  build_depends ['zlib1g-dev', 'ncurses-dev']
+  build_depends ['curl', 'zlib1g-dev', 'ncurses-dev']
 
   def build
     make

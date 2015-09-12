@@ -7,6 +7,8 @@ class Picard < FPM::Cookery::Recipe
   source "https://swift.rc.nectar.org.au:8888/v1/AUTH_809/Tools/picard-tools-#{version}.zip"
   md5 '84aee7dcce1dc61724e8bba3eb3cd8cc'
 
+  build_depends ['curl']
+
   def build
   end
 

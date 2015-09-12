@@ -7,6 +7,8 @@ class PeakAnalyzer < FPM::Cookery::Recipe
   source "https://swift.rc.nectar.org.au:8888/v1/AUTH_809/Tools/PeakAnalyzer_#{version}.tar.gz"
   md5 'd66d414aae2d912786a26f8e35d1b2ae'
 
+  build_depends ['curl']
+
   def build
   end
 

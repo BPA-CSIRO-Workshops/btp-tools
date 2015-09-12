@@ -7,6 +7,8 @@ class UCSCTools < FPM::Cookery::Recipe
   source "http://hgdownload.soe.ucsc.edu/admin/exe/userApps.v#{version}.src.tgz"
   md5 '718d5368cca8aee08961489d987b1be5'
 
+  build_depends ['curl']
+
   def build
     make
   end

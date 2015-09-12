@@ -7,6 +7,8 @@ class FASTXToolkit < FPM::Cookery::Recipe
   source "https://swift.rc.nectar.org.au:8888/v1/AUTH_809/Tools/fastx_toolkit-#{version}.tar.bz2"
   md5 'bf1993c898626bb147de3d6695c20b40'
 
+  build_depends ['curl']
+
   def build
     configure :prefix => prefix
     make

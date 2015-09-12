@@ -7,7 +7,7 @@ class IGVTools < FPM::Cookery::Recipe
   source "https://swift.rc.nectar.org.au:8888/v1/AUTH_809/Tools/igvtools_#{version}.zip"
   md5 '2b8712ef79b2c903f6f3383e20416f72'
 
-  depends ['openjdk-7-jre', 'java7-runtime']
+  depends ['curl', 'openjdk-7-jre', 'java7-runtime']
 
   def build
   end

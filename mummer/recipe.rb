@@ -7,6 +7,8 @@ class MUMmer < FPM::Cookery::Recipe
   source "https://swift.rc.nectar.org.au:8888/v1/AUTH_809/Tools/MUMmer#{version}.tar.gz"
   md5 'f2422b3d2638dba4baedb71b1acdffa2'
 
+  build_depends ['curl']
+
   def build
     safesystem 'make check'
     safesystem 'make install'

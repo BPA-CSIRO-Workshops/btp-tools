@@ -7,6 +7,8 @@ class Velvet < FPM::Cookery::Recipe
   source "https://swift.rc.nectar.org.au:8888/v1/AUTH_809/Tools/velvet_#{version}.tgz"
   md5 '6e28c4b9bedc5f7ab2b947e7266a02f6'
 
+  build_depends ['curl']
+
   def build
     safesystem "make 'MAXKMERLENGTH=59' 'LONGSEQUENCES=1' 'OPENMP=1'"
   end
