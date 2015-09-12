@@ -4,8 +4,10 @@ class SAMtools < FPM::Cookery::Recipe
   version '0.1.18' 
   revision 0
   homepage 'http://samtools.sourceforge.net/'
-  source "https://swift.rc.nectar.org.au:8888/v1/AUTH_809/Tools/samtools-#{version}.tar.bz2"
+  source "http://sourceforge.net/projects/samtools/files/samtools/#{version}/samtools-#{version}.tar.bz2"
   md5 '71dab132e21c0766f0de84c2371a9157'
+
+  build_depends ['zlib1g-dev', 'ncurses-dev']
 
   def build
     make
