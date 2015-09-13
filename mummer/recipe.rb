@@ -4,7 +4,7 @@ class MUMmer < FPM::Cookery::Recipe
   version '3.23' 
   revision 0
   homepage 'http://mummer.sourceforge.net/'
-  source "https://swift.rc.nectar.org.au:8888/v1/AUTH_809/Tools/MUMmer#{version}.tar.gz"
+  source "http://sourceforge.net/projects/mummer/files/mummer/#{version}/MUMmer#{version}.tar.gz"
   md5 'f2422b3d2638dba4baedb71b1acdffa2'
 
   build_depends ['curl']
