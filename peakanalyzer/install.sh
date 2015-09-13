@@ -1,25 +1,46 @@
 #!/bin/bash
 
-install_dir='/tools'
-owner='ubuntu'
-tools_location='https://swift.rc.nectar.org.au:8888/v1/AUTH_809/Tools'
+install_dir='/usr/local/tools'
+tools_location='http://www.bioinformatics.org/ftp/pub/peakanalyzer/PeakAnalyzer_1.4.tar.gz'
+tool_name='peakanalyzer'
+md5='d66d414aae2d912786a26f8e35d1b2ae'
+
+function md5check {
+  md5sum -c - <<< "$1 $2"
+  if [ $? -ne 0 ]; then
+    echo "MD5 mismatch on downloaded file, exiting ..."
+    exit
+  fi
+}
+
+##################
+## Dependencies ##
+##################
+dependencies=(default-jre default-jdk)
+apt-get update
+apt-get install -y ${dependencies[@]}
+apt-get clean
 
 ##################
 ## PeakAnalyzer ##
 ##################
-tool_name='peakanalyzer'
 if [ ! -e "$install_dir/$tool_name" ]; then
   echo "Creating installation directory for $tool_name"
   mkdir -p "$install_dir/$tool_name"
 else
   echo "Installation directory for $tool_name already exists"
 fi
-# Download the jar files
+
 cd $install_dir/$tool_name
-wget -4 --no-check-certificate $tools_location/PeakAnalyzer_1.4.tar.gz
+
+if [ ! -f PeakAnalyzer_1.4.tar.gz ]; then
+  wget -4 --no-check-certificate $tool_location
+fi
+
+md5check $md5 PeakAnalyzer_1.4.tar.gz
 tar -xzf PeakAnalyzer_1.4.tar.gz
-mv PeakAnalyzer_1.4 1.4
-ln -s $install_dir/$tool_name/1.4 $install_dir/$tool_name/peakanalyzer-default
+mv PeakAnalyzer_1.4 default
+
 # Cleanup
 rm PeakAnalyzer_1.4.tar.gz
 ####################
@@ -27,4 +48,4 @@ rm PeakAnalyzer_1.4.tar.gz
 #################
 ## Setup Paths ##
 #################
-chown -R $owner.$owner $install_dir/$tool_name
+chown -R root.root $install_dir/$tool_name
