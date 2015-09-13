@@ -4,7 +4,6 @@ class MACS < FPM::Cookery::Recipe
   version '1.4.2-1'
   revision 0
   homepage 'http://liulab.dfci.harvard.edu/MACS/'
-  source "https://swift.rc.nectar.org.au:8888/v1/AUTH_809/Tools/MACS-#{version}-1.tar.gz"
   source "https://github.com/downloads/taoliu/MACS/MACS-#{version}.tar.gz"
   md5 '950dab09fe1335c8bbb34a896c21e3e2'
 
