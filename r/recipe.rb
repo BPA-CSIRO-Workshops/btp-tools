@@ -12,6 +12,7 @@ class RBase < FPM::Cookery::Recipe
       then
       build_depends ['curl', 'bison', 'debhelper', 'dh-apparmor', 'gir1.2-freedesktop', 'gir1.2-pango-1.0', 'html2text', 'libbison-dev', 'libbz2-dev', 'libcairo-script-interpreter2', 'libcairo2-dev', 'libglib2.0-bin', 'libglib2.0-data', 'libglib2.0-dev', 'libjpeg-dev', 'libjpeg-turbo8-dev', 'libjpeg8-dev', 'liblzma-dev', 'libpango1.0-dev', 'libpcre3-dev', 'libpcrecpp0', 'libreadline-dev', 'libtiff5-dev', 'libtiffxx5', 'libxcb-render0-dev', 'libxcb-shm0-dev', 'tcl8.5', 'tcl8.5-dev', 'texi2html', 'tk8.5', 'tk8.5-dev', 'libx11-dev', 'x11-xkb-utils', 'libxt-dev', 'xdg-utils', 'xfonts-base', 'xserver-common', 'xvfb', 'default-jre', 'default-jdk', 'libxml2-dev', 'libcurl4-openssl-dev']
     when :12.04
+      then
       build_depends ['curl', 'bison', 'debhelper', 'dh-apparmor', 'gir1.2-freedesktop', 'gir1.2-pango-1.0', 'html2text', 'libbison-dev', 'libbz2-dev', 'libcairo-script-interpreter2', 'libcairo2-dev', 'libglib2.0-bin', 'libglib2.0-data', 'libglib2.0-dev', 'libjpeg-dev', 'libjpeg-turbo8-dev', 'libjpeg8-dev', 'liblzma-dev', 'libpango1.0-dev', 'libpcre3-dev', 'libpcrecpp0', 'libreadline-dev', 'libtiff4-dev', 'libtiffxx0c2', 'libxcb-render0-dev', 'libxcb-shm0-dev', 'tcl8.5', 'tcl8.5-dev', 'texi2html', 'tk8.5', 'tk8.5-dev', 'libx11-dev', 'x11-xkb-utils', 'libxt-dev', 'xdg-utils', 'xfonts-base', 'xserver-common', 'xvfb', 'default-jre', 'default-jdk', 'libxml2-dev', 'libcurl4-openssl-dev']
   end
 
