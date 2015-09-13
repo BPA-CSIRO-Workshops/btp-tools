@@ -1,7 +1,7 @@
 #!/bin/bash
 
 install_dir='/usr/local/tools'
-tools_location='http://www.bioinformatics.org/ftp/pub/peakanalyzer/PeakAnalyzer_1.4.tar.gz'
+tool_location='http://www.bioinformatics.org/ftp/pub/peakanalyzer/PeakAnalyzer_1.4.tar.gz'
 tool_name='peakanalyzer'
 md5='d66d414aae2d912786a26f8e35d1b2ae'
 
@@ -16,7 +16,7 @@ function md5check {
 ##################
 ## Dependencies ##
 ##################
-dependencies=(default-jre default-jdk)
+dependencies=(default-jre default-jdk wget)
 apt-get update
 apt-get install -y ${dependencies[@]}
 apt-get clean
