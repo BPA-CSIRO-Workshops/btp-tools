@@ -1,11 +1,11 @@
 class IGV < FPM::Cookery::Recipe
   description 'IGV is a high-performance visualization tool for interactive exploration of large, integrated genomic datasets.'
   name 'igv'
-  version '2.3.40' 
+  version '2.3.59' 
   revision 0
   homepage 'https://www.broadinstitute.org/igv/'
-  source "https://swift.rc.nectar.org.au:8888/v1/AUTH_809/Tools/IGV_#{version}.zip"
-  md5 '93aee7bfe878e20263e1e3cbcaa6739d'
+  source "http://data.broadinstitute.org/igv/projects/downloads/IGV_#{version}.zip"
+  md5 'b9610afb3bdca99defaef9d3bbf3bc40'
 
   depends ['curl', 'default-jre', 'default-jdk', 'icnsutils']
 
