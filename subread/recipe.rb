@@ -5,7 +5,7 @@ class Subread < FPM::Cookery::Recipe
   revision 0
   homepage 'http://subread.sourceforge.net/'
   source "http://sourceforge.net/projects/subread/files/subread-1.4.6-p4/subread-#{version}-source.tar.gz"
-  md5 '18a6f9af69a5825651f32148b44f1919'
+  md5 '2ad116fe3e76c9d4f9f0481419681e20'
 
   build_depends ['make', 'gcc', 'zlib1g', 'zlib1g-dev', 'wget']
 
