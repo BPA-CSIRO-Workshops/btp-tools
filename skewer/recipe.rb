@@ -6,6 +6,8 @@ class Skewer < FPM::Cookery::Recipe
   homepage 'https://github.com/relipmoc/skewer'
   source 'https://github.com/relipmoc/skewer.git', :with => :git
 
+  build_depends ['make', 'g++', 'git']
+
   def build
     inline_replace 'Makefile' do |s|
       s.gsub! 'LDFLAGS=-pthread -lrt', 'LDFLAGS=-pthread'
