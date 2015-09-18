@@ -39,9 +39,11 @@ fi
 
 md5check $md5 tophat-1.4.1.Linux_x86_64.tar.gz
 tar -xzf tophat-1.4.1.Linux_x86_64.tar.gz
-mv tophat-1.4.1.Linux_x86_64 default
+mkdir default
+mv tophat-1.4.1.Linux_x86_64/tophat default/
 
 # Cleanup
+rm -r tophat-1.4.1.Linux_x86_64
 rm tophat-1.4.1.Linux_x86_64.tar.gz
 ####################
 
