@@ -1,39 +1,57 @@
 #!/bin/bash
 
-install_dir='/tools'
-owner='ubuntu'
-tools_location='https://swift.rc.nectar.org.au:8888/v1/AUTH_809/Tools'
+install_dir='/usr/local/tools'
+tool_location='https://ccb.jhu.edu/software/tophat/downloads/tophat-2.0.13.Linux_x86_64.tar.gz'
+tool_name='tophat2'
+md5='af0e1a34b667df56f78597138f45e661'
+
+function md5check {
+  md5sum -c - <<< "$1 $2"
+  if [ $? -ne 0 ]; then
+    echo "MD5 mismatch on downloaded file, exiting ..."
+    exit
+  fi
+}
+
+##################
+## Dependencies ##
+##################
+dependencies=(wget)
+apt-get update
+apt-get install -y ${dependencies[@]}
+apt-get clean
 
 ##############
 ## TopHat 2 ##
 ##############
-tool_name='tophat2'
 if [ ! -e "$install_dir/$tool_name" ]; then
   echo "Creating installation directory for $tool_name"
   mkdir -p "$install_dir/$tool_name"
 else
   echo "Installation directory for $tool_name already exists"
 fi
-# Download the jar files
+
 cd $install_dir/$tool_name
-wget -4 --no-check-certificate $tools_location/tophat-2.0.13.tar.gz
-tar -xzf tophat-2.0.13.tar.gz
-# Compile
-cd tophat-2.0.13
-./configure --prefix=$install_dir/$tool_name/2.0.13 --with-bam=$install_dir/samtools/samtools-default
-make all
-make install
-ln -s $install_dir/$tool_name/2.0.13 $install_dir/$tool_name/$tool_name-default
+
+if [ ! -f tophat-2.0.13.Linux_x86_64.tar.gz ]; then
+  wget -4 --no-check-certificate $tool_location
+fi
+
+md5check $md5 tophat-2.0.13.Linux_x86_64.tar.gz
+tar -xzf tophat-2.0.13.Linux_x86_64.tar.gz
+mkdir default
+mv tophat-2.0.13.Linux_x86_64/tophat2 default/
+mv tophat-2.0.13.Linux_x86_64/tophat default/
+
 # Cleanup
-cd ../
-rm -r tophat-2.0.13
-rm tophat-2.0.13.tar.gz
+rm -r tophat-2.0.13.Linux_x86_64
+rm tophat-2.0.13.Linux_x86_64.tar.gz
 ####################
 
 #################
 ## Setup Paths ##
 #################
 chown -R $owner.$owner $install_dir/$tool_name
-echo "if ! echo \${PATH} | /bin/grep -q $install_dir/$tool_name/$tool_name-default/bin ; then" > /etc/profile.d/$tool_name.sh
-echo "PATH=$install_dir/$tool_name/$tool_name-default/bin:\${PATH}" >> /etc/profile.d/$tool_name.sh
+echo "if ! echo \${PATH} | /bin/grep -q $install_dir/$tool_name/default ; then" > /etc/profile.d/$tool_name.sh
+echo "PATH=$install_dir/$tool_name/default:\${PATH}" >> /etc/profile.d/$tool_name.sh
 echo "fi" >> /etc/profile.d/$tool_name.sh
