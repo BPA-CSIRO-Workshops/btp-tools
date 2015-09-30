@@ -7,6 +7,7 @@ class Subread < FPM::Cookery::Recipe
   source "http://sourceforge.net/projects/subread/files/subread-1.4.6-p4/subread-#{version}-source.tar.gz"
   md5 '2ad116fe3e76c9d4f9f0481419681e20'
 
+  # Let's install build dependencies first.
   build_depends ['make', 'gcc', 'zlib1g', 'zlib1g-dev', 'wget']
 
   def build
