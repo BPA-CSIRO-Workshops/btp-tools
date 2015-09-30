@@ -7,6 +7,7 @@ class Bedtools < FPM::Cookery::Recipe
   source "https://github.com/arq5x/bedtools2/archive/v#{version}.tar.gz"
   md5 '488c94858a6e2fb8fec68c3697444b6d'
 
+  # Let's install build dependencies first.
   build_depends ['curl', 'make', 'g++', 'wget', 'zlib1g-dev']
 
   def build
