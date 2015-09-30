@@ -7,6 +7,7 @@ class Tophat2 < FPM::Cookery::Recipe
   source "https://ccb.jhu.edu/software/tophat/downloads/tophat-#{version}.Linux_x86_64.tar.gz"
   md5 'af0e1a34b667df56f78597138f45e661'
 
+  # Let's install build dependencies first.
   build_depends ['curl']
   
   def build
