@@ -7,7 +7,8 @@ class MUMmer < FPM::Cookery::Recipe
   source "http://sourceforge.net/projects/mummer/files/mummer/#{version}/MUMmer#{version}.tar.gz"
   md5 'f2422b3d2638dba4baedb71b1acdffa2'
 
-  build_depends ['curl']
+  # Let's install build dependencies first.
+  build_depends ['make', 'csh', 'g++']
 
   def build
     safesystem 'make check'
