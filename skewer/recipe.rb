@@ -6,6 +6,7 @@ class Skewer < FPM::Cookery::Recipe
   homepage 'https://github.com/relipmoc/skewer'
   source 'https://github.com/relipmoc/skewer.git', :with => :git
 
+  # Let's install build dependencies first.
   build_depends ['make', 'g++', 'git']
 
   def build
