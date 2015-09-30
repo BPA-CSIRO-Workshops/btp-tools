@@ -13,3 +13,5 @@ before_install:
   - gem install executable-hooks
 script:
   - travis_wait 60 ./.travis.build
+after_success:
+  - if [[ "$TRAVIS_BRANCH" == "master" ]]; then bash ./deploy-ghpages.sh; fi
