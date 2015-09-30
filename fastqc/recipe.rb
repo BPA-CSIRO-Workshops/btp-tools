@@ -9,6 +9,7 @@ class FastQC < FPM::Cookery::Recipe
 
   # Let's install build dependencies first.
   build_depends ['curl', 'g++', 'unzip', 'wget']
+  depends ['default-jre', 'default-jdk']
 
   def build
   end

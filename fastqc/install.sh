@@ -13,6 +13,14 @@ function md5check {
   fi
 }
 
+##################
+## Dependencies ##
+##################
+dependencies=(default-jre default-jdk unzip)
+apt-get update
+apt-get install -y ${dependencies[@]}
+apt-get clean
+
 ############
 ## FastQC ##
 ############
