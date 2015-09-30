@@ -7,6 +7,7 @@ class Velvet < FPM::Cookery::Recipe
   source "https://www.ebi.ac.uk/~zerbino/velvet/velvet_#{version}.tgz"
   md5 '6e28c4b9bedc5f7ab2b947e7266a02f6'
 
+  # Let's install build dependencies first.
   build_depends ['curl', 'zlib1g-dev']
 
   def build
