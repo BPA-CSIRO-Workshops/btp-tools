@@ -7,6 +7,7 @@ class FastQC < FPM::Cookery::Recipe
   source "http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v#{version}_source.zip"
   md5 '80b3ad1af0a2b2594318857ed7d7c237'
 
+  # Let's install build dependencies first.
   build_depends ['curl', 'g++', 'unzip', 'wget']
 
   def build
