@@ -10,5 +10,5 @@ cd gh-pages
 mkdir -p debs
 cp -Rf ../pkg/*.deb ./debs
 git add -f .
-git commit -m "Lastest DEB installers on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to gh-pages"
+git commit -m "Latest DEB installers on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to gh-pages"
 git push -fq origin gh-pages > /dev/null
