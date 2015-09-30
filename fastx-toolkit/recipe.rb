@@ -7,6 +7,7 @@ class FASTXToolkit < FPM::Cookery::Recipe
   source "https://github.com/agordon/fastx_toolkit/releases/download/#{version}/fastx_toolkit-#{version}.tar.bz2"
   md5 'bf1993c898626bb147de3d6695c20b40'
 
+  # Let's install build dependencies first.
   build_depends ['curl', 'gcc', 'g++', 'pkg-config', 'wget', 'libgtextutils-dev']
 
   def build
