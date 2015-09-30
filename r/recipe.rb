@@ -13,7 +13,8 @@ class RBase < FPM::Cookery::Recipe
   def build
     configure :prefix => prefix
     make
-    
+
+    # Install additional R libraries.    
     File.open('additional.R', 'w', 0755) do |f|
       f.write <<-__EOF
 source("http://bioconductor.org/biocLite.R")
