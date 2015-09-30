@@ -5,6 +5,7 @@
   - [Purpose](#purpose)
   - [Prerequisites](#prerequisites)
   - [Building the `deb` Packages](#building-the-deb-packages)
+  - [License](#license)
 
 # Purpose
 
