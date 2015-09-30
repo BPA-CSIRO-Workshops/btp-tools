@@ -7,6 +7,7 @@ class IGVTools < FPM::Cookery::Recipe
   source "http://data.broadinstitute.org/igv/projects/downloads/igvtools_#{version}.zip"
   md5 '68a3230698bd530544ced92414d45c33'
 
+  # Let's install build dependencies first.
   depends ['curl', 'default-jre', 'default-jdk']
 
   def build
