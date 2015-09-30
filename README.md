@@ -1,13 +1,16 @@
 [![Build Status](https://travis-ci.org/BPA-CSIRO-Workshops/btp-tools.svg?branch=master)](https://travis-ci.org/BPA-CSIRO-Workshops/btp-tools)
 
+# Table of Contents
+
+  - [Purpose](#purpose)
+  - [Prerequisites](#prerequisites)
+  - [Building the `deb` Packages](#building-the-deb-packages)
+
+# Purpose
+
 This repository contains a set of [fpm-cookery](https://github.com/bernd/fpm-cookery) recipes for building `deb`
 packages for a set of bioinformatics tools used in the Bioinformatics Training Platform (BTP). Each tool also contains
 a standalone shell script tool installer.
-
-# Table of Contents
-
-  - [Prerequisites](#prerequisites)
-  - [Building the `deb` Packages](#building-the-deb-packages)
 
 # Prerequisites
 The things you need to have installed in order to use the recipes and build `deb` packages yourself are:
