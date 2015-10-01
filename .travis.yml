@@ -12,6 +12,7 @@ before_install:
   - gem install fpm-cookery
   - gem install executable-hooks
   - curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+  - apt-get install git-lfs
 script:
   - travis_wait 90 ./.travis.build
 after_success:
