@@ -11,8 +11,7 @@ rvm:
 before_install:
   - gem install fpm-cookery
   - gem install executable-hooks
-  - wget https://packagecloud.io/github/git-lfs/packages/debian/jessie/git-lfs_0.6.0_amd64.deb
-  - sudo dpkg -i git-lfs_0.6.0_amd64.deb
+  - curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 script:
   - travis_wait 90 ./.travis.build
 after_success:
