@@ -13,6 +13,8 @@ class AMOS < FPM::Cookery::Recipe
   def build
     # Add required getopt header to compile.
     safesystem 'sed -i "1i#include <getopt.h>" src/Align/find-tandem.cc'
+
+    # Configure and build.
     configure :prefix => prefix,
       :enable_minimus => 'no'
     make
