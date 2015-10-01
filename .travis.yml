@@ -12,6 +12,7 @@ before_install:
   - gem install fpm-cookery
   - gem install executable-hooks
   - gem source --add https://packagecloud.io/github/git-lfs/
+  - gem install git-lfs
 script:
   - travis_wait 90 ./.travis.build
 after_success:
