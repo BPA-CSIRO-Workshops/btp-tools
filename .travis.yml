@@ -12,7 +12,7 @@ before_install:
   - gem install fpm-cookery
   - gem install executable-hooks
 before_script: 
-  - ./install-dependencies.sh
+  - sudo ./install-dependencies.sh
 script:
   - travis_wait 90 ./.travis.build
 after_success:
