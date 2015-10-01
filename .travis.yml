@@ -12,7 +12,9 @@ before_install:
   - gem install fpm-cookery
   - gem install executable-hooks
 before_script: 
-  - sudo ./install-dependencies.sh
+  - wget https://github.com/github/git-lfs/releases/download/v0.6.0/git-lfs-linux-amd64-0.6.0.tar.gz -O /tmp/git-lfs.tar.gz
+  - tar -xvzf /tmp/git-lfs.tar.gz
+  - sudo /tmp/git-lfs/install.sh
 script:
   - travis_wait 90 ./.travis.build
 after_success:
