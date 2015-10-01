@@ -11,6 +11,8 @@ rvm:
 before_install:
   - gem install fpm-cookery
   - gem install executable-hooks
+install: 
+  - ./install-dependencies.sh
 script:
   - travis_wait 90 ./.travis.build
 after_success:
