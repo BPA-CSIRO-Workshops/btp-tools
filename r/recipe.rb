@@ -25,6 +25,7 @@ install.packages(pkgs="gplots",repos="http://cran.csiro.au/")
       __EOF
     end
 
+    # Execute the additional script to install the libraries.
     File.open('additional.sh', 'w', 0755) do |f|
       f.write <<-__EOF
 #!/bin/bash
