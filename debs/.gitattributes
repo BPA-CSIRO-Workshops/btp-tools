@@ -1,1 +1,19 @@
 
+blat_35-0_amd64.deb filter=lfs diff=lfs merge=lfs -text
+bowtie2_2.2.4-0_amd64.deb filter=lfs diff=lfs merge=lfs -text
+bowtie_1.1.1-0_amd64.deb filter=lfs diff=lfs merge=lfs -text
+cufflinks_2.2.1-0_amd64.deb filter=lfs diff=lfs merge=lfs -text
+fastqc_0.11.3-0_amd64.deb filter=lfs diff=lfs merge=lfs -text
+fastxtoolkit_0.0.14-0_amd64.deb filter=lfs diff=lfs merge=lfs -text
+gnx-tools_0.0.1-0_amd64.deb filter=lfs diff=lfs merge=lfs -text
+igv_2.3.59-0_amd64.deb filter=lfs diff=lfs merge=lfs -text
+igvtools_2.3.57-0_amd64.deb filter=lfs diff=lfs merge=lfs -text
+macs_1.4.2-1-0_amd64.deb filter=lfs diff=lfs merge=lfs -text
+mummer_3.23-0_amd64.deb filter=lfs diff=lfs merge=lfs -text
+picard_1.138-0_amd64.deb filter=lfs diff=lfs merge=lfs -text
+samtools_0.1.18-0_amd64.deb filter=lfs diff=lfs merge=lfs -text
+skewer_0.0.1-0_amd64.deb filter=lfs diff=lfs merge=lfs -text
+subread_1.4.6-p4-0_amd64.deb filter=lfs diff=lfs merge=lfs -text
+tophat2_2.0.13-0_amd64.deb filter=lfs diff=lfs merge=lfs -text
+tophat_1.4.1-0_amd64.deb filter=lfs diff=lfs merge=lfs -text
+velvet_1.2.10-0_amd64.deb filter=lfs diff=lfs merge=lfs -text
