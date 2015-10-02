@@ -9,8 +9,9 @@ git clone --quiet --branch=gh-pages https://${GH_TOKEN}@${GH_REF} gh-pages > /de
 cd gh-pages
 mkdir -p debs
 cp -Rf ../pkg/*.deb ./debs
-git lfs track 'debs/'
-git add -f .
+cd ./debs
+git lfs track '*.deb'
+git add -f '*.deb'
 git commit -m "Latest DEB installers on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to gh-pages"
 git lfs ls-files
 git push -fq origin gh-pages > /dev/null
