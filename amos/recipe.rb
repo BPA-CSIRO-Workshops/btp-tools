@@ -10,7 +10,6 @@ class AMOS < FPM::Cookery::Recipe
   # Let's install build dependencies first.
   build_depends ['curl', 'make', 'g++', 'libboost-all-dev', 'libqt4-dev', 'libxml-perl', 'libdbi-perl', 'libstatistics-descriptive-perl']
 
-  # Build.
   def build
     # Add required getopt header to compile.
     safesystem 'sed -i "1i#include <getopt.h>" src/Align/find-tandem.cc'
