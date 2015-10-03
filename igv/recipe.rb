@@ -14,6 +14,7 @@ class IGV < FPM::Cookery::Recipe
   def build
   end
 
+  # Install
   def install
     Dir.chdir "IGV_#{version}" do
       File.open('IGV.desktop', 'w', 0755) do |f|
