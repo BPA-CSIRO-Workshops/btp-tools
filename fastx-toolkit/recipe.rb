@@ -10,11 +10,13 @@ class FASTXToolkit < FPM::Cookery::Recipe
   # Let's install build dependencies first.
   build_depends ['curl', 'gcc', 'g++', 'pkg-config', 'wget', 'libgtextutils-dev']
 
+  # Build:
   def build
     configure :prefix => prefix
     make
   end
 
+  # Install:
   def install
     make :install, 'DESTDIR' => destdir
   end

@@ -9,10 +9,12 @@ class Tophat2 < FPM::Cookery::Recipe
 
   # Let's install build dependencies first.
   build_depends ['curl']
-  
+
+  # Build:  
   def build
   end
 
+  # Install:
   def install
     bin.install ['tophat', 'tophat2']
   end

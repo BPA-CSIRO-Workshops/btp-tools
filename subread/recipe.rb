@@ -10,12 +10,14 @@ class Subread < FPM::Cookery::Recipe
   # Let's install build dependencies first.
   build_depends ['make', 'gcc', 'zlib1g', 'zlib1g-dev', 'wget']
 
+  # Build:
   def build
     Dir.chdir "src" do
       safesystem 'make -f Makefile.Linux'
     end
   end
 
+  # Install:
   def install
     Dir.chdir "bin" do
       bin.install ['featureCounts', 'exactSNP', 'subread-buildindex', 'subread-align', 'subindel', 'subjunc']

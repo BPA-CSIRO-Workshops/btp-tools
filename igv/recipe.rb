@@ -10,11 +10,11 @@ class IGV < FPM::Cookery::Recipe
   # Let's install build dependencies first.
   depends ['curl', 'default-jre', 'default-jdk', 'icnsutils']
 
-  # Build
+  # Build:
   def build
   end
 
-  # Install
+  # Install:
   def install
     Dir.chdir "IGV_#{version}" do
       File.open('IGV.desktop', 'w', 0755) do |f|

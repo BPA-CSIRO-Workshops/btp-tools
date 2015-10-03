@@ -10,10 +10,12 @@ class Velvet < FPM::Cookery::Recipe
   # Let's install build dependencies first.
   build_depends ['curl', 'zlib1g-dev']
 
+  # Build:
   def build
     safesystem "make 'MAXKMERLENGTH=59' 'LONGSEQUENCES=1' 'OPENMP=1'"
   end
 
+  # Install:
   def install
     velvetg_long = bin('velvetg_long')
     velveth_long = bin('velveth_long')

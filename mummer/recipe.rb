@@ -10,11 +10,13 @@ class MUMmer < FPM::Cookery::Recipe
   # Let's install build dependencies first.
   build_depends ['make', 'csh', 'g++']
 
+  # Build:
   def build
     safesystem 'make check'
     safesystem 'make install'
   end
 
+  # Install:
   def install
     bin.install ['mummer', 'nucmer', 'promer', 'run-mummer1', 'run-mummer3']
   end

@@ -12,11 +12,11 @@ class Picard < FPM::Cookery::Recipe
   build_depends ['curl', 'default-jre', 'default-jdk', 'ant']
   depends ['default-jre', 'default-jdk']
 
-  # Build
+  # Build:
   def build
   end
 
-  # Install
+  # Install:
   def install
     bin.install Dir["picard-tools-#{version}/*"]
   end

@@ -11,9 +11,11 @@ class FastQC < FPM::Cookery::Recipe
   build_depends ['curl', 'g++', 'unzip', 'wget']
   depends ['default-jre', 'default-jdk']
 
+  # Build:
   def build
   end
 
+  # Install:
   def install
     bin.mkdir
     prefix('local/fastqc').mkdir

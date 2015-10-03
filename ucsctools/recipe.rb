@@ -10,10 +10,12 @@ class UCSCTools < FPM::Cookery::Recipe
   # Let's install build dependencies first.
   build_depends ['curl', 'make', 'zlib1g-dev', 'libssl-dev', 'libpng12-0-dev', 'libmysqlclient-dev', 'gcc', 'g++']
 
+  # Build:
   def build
     make
   end
 
+  # Install:
   def install
     bin.install Dir['bin/*']
   end

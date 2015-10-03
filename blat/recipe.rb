@@ -10,6 +10,7 @@ class Blat < FPM::Cookery::Recipe
   # Let's install build dependencies first.
   build_depends ['curl', 'libpng12-dev']
 
+  # Build:
   def build
     Dir.chdir 'blatSrc' do
       Dir.mkdir 'bin'
@@ -20,6 +21,7 @@ class Blat < FPM::Cookery::Recipe
     end
   end
 
+  # Install:
   def install
     Dir.chdir 'blatSrc/bin' do
       bin.install ['blat', 'faToNib', 'faToTwoBit', 'gfClient', 'gfServer', 'nibFrag', 'pslPretty', 'pslReps', 'pslSort', 'twoBitInfo', 'twoBitToFa']

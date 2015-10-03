@@ -10,12 +10,14 @@ class Bowtie < FPM::Cookery::Recipe
   # Let's install build dependencies first.
   build_depends ['curl', 'g++', 'unzip', 'wget']
 
+  # Build:
   def build
     Dir.chdir "bowtie-#{version}" do
       make
     end
   end
 
+  # Install:
   def install
     Dir.chdir "bowtie-#{version}" do
       bin.install ['bowtie', 'bowtie-align-s', 'bowtie-align-l', 'bowtie-build', 'bowtie-build-s', 'bowtie-build-l', 'bowtie-inspect', 'bowtie-inspect-s', 'bowtie-inspect-l']

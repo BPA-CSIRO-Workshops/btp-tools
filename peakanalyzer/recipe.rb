@@ -10,11 +10,11 @@ class PeakAnalyzer < FPM::Cookery::Recipe
   # Install dependencies.
   build_depends ['curl', 'default-jre', 'default-jdk']
 
-  # Build.
+  # Build:
   def build
   end
 
-  # Install.
+  # Install:
   def install
     bin.install ['PeakAnalyzer.jar', 'PeakAnalyzerGUI.jar']
   end

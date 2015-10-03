@@ -10,6 +10,7 @@ class GNXTools < FPM::Cookery::Recipe
   build_depends ['default-jre', 'default-jdk', 'ant', 'git']
   depends ['default-jre', 'default-jdk']
 
+  # Build:
   def build
     safesystem 'mkdir bin'
     safesystem 'javac -d bin/ src/uk/ac/ebi/gnx/*'
@@ -25,6 +26,7 @@ exec java -jar /usr/share/java/gnx.jar "$@"
     end
   end
 
+  # Install:
   def install
     share('java').install 'gnx.jar'
     bin.install 'gnx'

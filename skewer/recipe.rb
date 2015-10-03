@@ -9,6 +9,7 @@ class Skewer < FPM::Cookery::Recipe
   # Let's install build dependencies first.
   build_depends ['make', 'g++', 'git']
 
+  # Build:
   def build
     inline_replace 'Makefile' do |s|
       s.gsub! 'LDFLAGS=-pthread -lrt', 'LDFLAGS=-pthread'
@@ -17,6 +18,7 @@ class Skewer < FPM::Cookery::Recipe
     make
   end
 
+  # Install:
   def install
     bin.install 'skewer'
   end

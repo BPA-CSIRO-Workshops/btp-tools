@@ -10,9 +10,11 @@ class IGVTools < FPM::Cookery::Recipe
   # Let's install build dependencies first.
   depends ['curl', 'default-jre', 'default-jdk']
 
+  # Build:
   def build
   end
 
+  # Install:
   def install
     bin.install Dir["IGVTools/*"]
   end
