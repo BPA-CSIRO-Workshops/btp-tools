@@ -17,7 +17,7 @@ before_install:
 script:
   - travis_wait 90 ./.travis.build
 before_deploy:
-  - cd pkg && export RELEASE_PKG_FILE=$(ls *.deb)
+  - export RELEASE_PKG_FILE=$(ls ./pkg/*.deb)
   - echo "deploying $RELEASE_PKG_FILE to GitHub releases"
 deploy:
   provider: releases
