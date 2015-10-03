@@ -10,10 +10,12 @@ class Bedtools < FPM::Cookery::Recipe
   # Let's install build dependencies first.
   build_depends ['curl', 'make', 'g++', 'wget', 'zlib1g-dev']
 
+  # Build:
   def build
     make
   end
 
+  # Install:
   def install
     bin.install Dir["bin/*"]
   end
