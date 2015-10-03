@@ -11,11 +11,11 @@ class MACS < FPM::Cookery::Recipe
   build_depends ['curl', 'python']
   depends ['python']
 
-  # Build
+  # Build.
   def build
   end
 
-  # Install
+  # Install.
   def install
     linktarget = bin('macs')
     with_trueprefix do
