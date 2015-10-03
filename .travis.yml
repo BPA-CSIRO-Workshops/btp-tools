@@ -2,26 +2,19 @@ language: ruby
 sudo: true
 env:
   global:
-  - rvmsudo_secure_path: 0
+    - rvmsudo_secure_path: 0
+    - GH_REF: github.com/${TRAVIS_REPO_SLUG}.git
+    - secure: "TVudiZmrd4RD+NlYdFApHGiSZZWfkq6bfyq+1knQgzADm5gtGgt54FsFIBOH7+RzC8JSj6oNRWiQcAVvN46LPBdn5wm75P1qgcQ9yi4Qtq9SIybvvBp5YsZUaaK/Gx9gABL0LCKMvK4tlM1zoUUJeZCGRrp63DbuMnGhZ5SNriXGYduWNXD/HP/KuLvvs+2W27IPAQp6yxYIINriwnRE1pZzYnR2PnlknW89kp7HrJO1X22ZeEWl50Rh+KK7yXcXTaNZFgS1hzWImQe0/FRZNwy5qCRk7TM/QLb0+CVsi4Qu/uFT8icoYGTHWUKkLQ7mB8uBd1chHVXuBDbsG6SuyaRxzqy1cifQnggojEuct1zXaBm8nDEet+KrXHDj2OaEvlJQmxAdFD7HGaljS7ZtDZQ4PC5DP3sHPN3PWl6t6gLnB/fotxttRwWvAIodbh5NksZCHtgtuqq+m2ZCnZI0ZLCtaMubwglsHE048mA8++gEdi8zICzIYtbLPh6z7QwIS0B3PqtGem1myxL7LJbeXMy5HOJaZi7B+2TekUrPDIlrEg7dqWCQ44Jg8lqftkAj82ldZ7CQwSetcnAhCXPtgc1UyhY+9YduybW9RqVObaEtPB4s0C/3ne+PA5Xxy6Lizmfbq+FkjAZKS06W2V96iPR5PFaU7Wg3UnRvXSYTQ/w="
 rvm:
-- 1.9.3
-- 2.0
+  - 1.9.3
+  - 2.0
 before_install:
-- gem install fpm-cookery
-- gem install executable-hooks
+  - gem install fpm-cookery
+  - gem install executable-hooks
+  - wget https://github.com/github/git-lfs/releases/download/v0.6.0/git-lfs-linux-amd64-0.6.0.tar.gz
+  - tar xvzf git-lfs-linux-amd64-0.6.0.tar.gz
+  - cd git-lfs-0.6.0 && sudo ./install.sh && cd ../
 script:
-- travis_wait 90 ./.travis.build
+  - travis_wait 90 ./.travis.build
 after_success:
-- sudo chmod 755 ./pkg/*.deb
-before_deploy:
-- export RELEASE_PKG_FILE=$(ls ./pkg/*.deb)
-- echo "deploying ${RELEASE_PKG_FILE} to GitHub releases"
-deploy:
-  provider: releases
-  api-key:
-    secure: TVudiZmrd4RD+NlYdFApHGiSZZWfkq6bfyq+1knQgzADm5gtGgt54FsFIBOH7+RzC8JSj6oNRWiQcAVvN46LPBdn5wm75P1qgcQ9yi4Qtq9SIybvvBp5YsZUaaK/Gx9gABL0LCKMvK4tlM1zoUUJeZCGRrp63DbuMnGhZ5SNriXGYduWNXD/HP/KuLvvs+2W27IPAQp6yxYIINriwnRE1pZzYnR2PnlknW89kp7HrJO1X22ZeEWl50Rh+KK7yXcXTaNZFgS1hzWImQe0/FRZNwy5qCRk7TM/QLb0+CVsi4Qu/uFT8icoYGTHWUKkLQ7mB8uBd1chHVXuBDbsG6SuyaRxzqy1cifQnggojEuct1zXaBm8nDEet+KrXHDj2OaEvlJQmxAdFD7HGaljS7ZtDZQ4PC5DP3sHPN3PWl6t6gLnB/fotxttRwWvAIodbh5NksZCHtgtuqq+m2ZCnZI0ZLCtaMubwglsHE048mA8++gEdi8zICzIYtbLPh6z7QwIS0B3PqtGem1myxL7LJbeXMy5HOJaZi7B+2TekUrPDIlrEg7dqWCQ44Jg8lqftkAj82ldZ7CQwSetcnAhCXPtgc1UyhY+9YduybW9RqVObaEtPB4s0C/3ne+PA5Xxy6Lizmfbq+FkjAZKS06W2V96iPR5PFaU7Wg3UnRvXSYTQ/w=
-  file_glob: true
-  file: ./pkg/*.deb
-  skip_cleanup: true
-  on:
-    tags: true
+  - if [[ "$TRAVIS_BRANCH" == "master" ]]; then bash ./deploy-ghpages.sh; fi
