@@ -7,6 +7,7 @@ class PeakAnalyzer < FPM::Cookery::Recipe
   source "http://www.bioinformatics.org/ftp/pub/peakanalyzer/PeakAnalyzer_#{version}.tar.gz"
   md5 'd66d414aae2d912786a26f8e35d1b2ae'
 
+  # Install dependencies.
   build_depends ['curl', 'default-jre', 'default-jdk']
 
   # Build
