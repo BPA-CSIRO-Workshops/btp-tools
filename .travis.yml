@@ -16,5 +16,13 @@ before_install:
   - cd git-lfs-0.6.0 && sudo ./install.sh && cd ../
 script:
   - travis_wait 90 ./.travis.build
-after_success:
-  - if [[ "$TRAVIS_BRANCH" == "master" ]]; then bash ./deploy-ghpages.sh; fi
+before_deploy:
+  - cd pkg && export RELEASE_PKG_FILE=$(ls *.deb)
+  - echo "deploying $RELEASE_PKG_FILE to GitHub releases"
+deploy:
+  provider: releases
+  api_key: "dIJufv7k6urVR0VG+iWxkVOKFQlxidIphw0wUcDWFEZaiV/5azEQ3TFomdrbM+3sg0mda+mpD+nKQ4rei1t6nx4zHd1uOChrm1rXiw6jkgqgJCg7NbIVJ53LuuptwVxX8useHPb13ocQPZELCdxGcWnj08Tc4a24CHUkPyod1M9KseFtNQZjgQ0DtfB446aW5AYoqwl8Oje5I+8ZY2zXeuFLPM1kyKCzHp3oM6Pj0cTjjQCmK0BxyWXEuXqFYwpNB7soj4sjCMN3BsOFaGHzzsVXDsssl0SR0btCrwFYBZG6AU9Fe1fzqLAezLWeL4+33Ztp3lACkgkHBpFAOXAGHPG0MIDbO5iTJYD7L5DpdQprh9li5um6i3Zg3gWDFgPqL7W7hqJ8VlDy/GM3BYTG40eDUa/ikVZvabEiyv+h2r9ufhhVxlrrLf5aFD/uNM2oz4nWQvHWx/I8HCXI0CVzlJWIC7Kwfw9ay0g6+zbWgfUIzPlLM73JZu35W6uSvQ8Gr6ozhHQ4stm7Nx8YUdkleGo9Exwn2B7XFpWFmw+pmQljWV/vRlkXdqWa0JY9jeNYZE557WplN6l4b3B8xuuhrT6qh5Ll81IFldBGhIo/5mXrgJHT244ymEbxywkjRkrSSbA7TDfQzaAOBwrugBUp9A+6KX1B7xO75Xdd1fi23/o="
+  file: "${RELEASE_PKG_FILE}"
+  skip_cleanup: true
+  on:
+    tags: true
