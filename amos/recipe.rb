@@ -20,7 +20,7 @@ class AMOS < FPM::Cookery::Recipe
       :enable_minimus => 'no'
 
     # Compile
-    make all
+    make
   end
 
   # Install
