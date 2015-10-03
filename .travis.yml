@@ -3,7 +3,6 @@ sudo: true
 env:
   global:
   - rvmsudo_secure_path: 0
-  - secure: WZ6lizU+HKOnmT4dcTm4a9g10zSAVGRMCPqlX4BJGueab23CXNbcCe2oBzwqVVXxFS8/8lvaqx9Lt+hAL/9el255tFm954hAVzTCizmW4VuSh9bVecGgLTmt1n9KysZ1Ka4af87Hzs7Y+GhHoTmKe+l1JgG0zEze8B16PoQ+uikWXou7znXFbS8UQ56WL1b/GivFdglqamqy6ZNmOL0LAEGDtwhMzohT23wQ+2e9aZ+5Xjgd/WUZ+Uz2rFqG7AYdMvVArRi+DcnssEYyS290zdMF1oS9e4YaC/D3UXM6c6msPVWg1L/Rm69JffLIiNWJs2SdtiIMEWsPDvu6K/IB3n2AC0FIQ0bb0QYbwZ6uY0qspEtF0WYRw0BZdCfpbR2vOJS+jBS9PnBRt1gKhP9PERrr53OXml0RQt40k70C+RvmwCoAyqksUOqaRK+gIf11APoloK/wwIQx27WbpaaDTHskEbIaFXYMlFJ3G5GP3NjFYaYehqvqmRO3KdDZz+mcv8t8B+WNP5YJ/U8jUsCqZsLx6H9XiMP3NW+tFaXur2zsJDsd3Sc1d9uID+vYtRaevrGedGIhQovxNhhyzpVAqKvkbQKyUIVEjIQWFD1wpzcq4FLuJcj/f+XU6fqkvpJ+fccZ3ytvk3PsV1UW/Fsr82JD25k6xFKJFDfxd7RzVSQ=
 rvm:
 - 1.9.3
 - 2.0
@@ -17,6 +16,7 @@ before_deploy:
 - echo "deploying $RELEASE_PKG_FILE to GitHub releases"
 deploy:
   provider: releases
+  api_key: "WZ6lizU+HKOnmT4dcTm4a9g10zSAVGRMCPqlX4BJGueab23CXNbcCe2oBzwqVVXxFS8/8lvaqx9Lt+hAL/9el255tFm954hAVzTCizmW4VuSh9bVecGgLTmt1n9KysZ1Ka4af87Hzs7Y+GhHoTmKe+l1JgG0zEze8B16PoQ+uikWXou7znXFbS8UQ56WL1b/GivFdglqamqy6ZNmOL0LAEGDtwhMzohT23wQ+2e9aZ+5Xjgd/WUZ+Uz2rFqG7AYdMvVArRi+DcnssEYyS290zdMF1oS9e4YaC/D3UXM6c6msPVWg1L/Rm69JffLIiNWJs2SdtiIMEWsPDvu6K/IB3n2AC0FIQ0bb0QYbwZ6uY0qspEtF0WYRw0BZdCfpbR2vOJS+jBS9PnBRt1gKhP9PERrr53OXml0RQt40k70C+RvmwCoAyqksUOqaRK+gIf11APoloK/wwIQx27WbpaaDTHskEbIaFXYMlFJ3G5GP3NjFYaYehqvqmRO3KdDZz+mcv8t8B+WNP5YJ/U8jUsCqZsLx6H9XiMP3NW+tFaXur2zsJDsd3Sc1d9uID+vYtRaevrGedGIhQovxNhhyzpVAqKvkbQKyUIVEjIQWFD1wpzcq4FLuJcj/f+XU6fqkvpJ+fccZ3ytvk3PsV1UW/Fsr82JD25k6xFKJFDfxd7RzVSQ="
   file_glob: true
   file: ./pkg/*.deb
   skip_cleanup: true
