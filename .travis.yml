@@ -11,9 +11,6 @@ rvm:
 before_install:
   - gem install fpm-cookery
   - gem install executable-hooks
-  - wget https://github.com/github/git-lfs/releases/download/v0.6.0/git-lfs-linux-amd64-0.6.0.tar.gz
-  - tar xvzf git-lfs-linux-amd64-0.6.0.tar.gz
-  - cd git-lfs-0.6.0 && sudo ./install.sh && cd ../
 script:
   - travis_wait 90 ./.travis.build
 before_deploy:
