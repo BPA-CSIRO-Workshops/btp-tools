@@ -12,7 +12,7 @@ before_install:
 script:
 - travis_wait 90 ./.travis.build
 after_success:
-- chmod 755 ./pkg/*.deb
+- sudo chmod 755 ./pkg/*.deb
 before_deploy:
 - export RELEASE_PKG_FILE=$(ls ./pkg/*.deb)
 - echo "deploying ${RELEASE_PKG_FILE} to GitHub releases"
