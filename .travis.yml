@@ -2,22 +2,21 @@ language: ruby
 sudo: true
 env:
   global:
-    - rvmsudo_secure_path: 0
+  - rvmsudo_secure_path: 0
+  - secure: WZ6lizU+HKOnmT4dcTm4a9g10zSAVGRMCPqlX4BJGueab23CXNbcCe2oBzwqVVXxFS8/8lvaqx9Lt+hAL/9el255tFm954hAVzTCizmW4VuSh9bVecGgLTmt1n9KysZ1Ka4af87Hzs7Y+GhHoTmKe+l1JgG0zEze8B16PoQ+uikWXou7znXFbS8UQ56WL1b/GivFdglqamqy6ZNmOL0LAEGDtwhMzohT23wQ+2e9aZ+5Xjgd/WUZ+Uz2rFqG7AYdMvVArRi+DcnssEYyS290zdMF1oS9e4YaC/D3UXM6c6msPVWg1L/Rm69JffLIiNWJs2SdtiIMEWsPDvu6K/IB3n2AC0FIQ0bb0QYbwZ6uY0qspEtF0WYRw0BZdCfpbR2vOJS+jBS9PnBRt1gKhP9PERrr53OXml0RQt40k70C+RvmwCoAyqksUOqaRK+gIf11APoloK/wwIQx27WbpaaDTHskEbIaFXYMlFJ3G5GP3NjFYaYehqvqmRO3KdDZz+mcv8t8B+WNP5YJ/U8jUsCqZsLx6H9XiMP3NW+tFaXur2zsJDsd3Sc1d9uID+vYtRaevrGedGIhQovxNhhyzpVAqKvkbQKyUIVEjIQWFD1wpzcq4FLuJcj/f+XU6fqkvpJ+fccZ3ytvk3PsV1UW/Fsr82JD25k6xFKJFDfxd7RzVSQ=
 rvm:
-  - 1.9.3
-  - 2.0
+- 1.9.3
+- 2.0
 before_install:
-  - gem install fpm-cookery
-  - gem install executable-hooks
+- gem install fpm-cookery
+- gem install executable-hooks
 script:
-  - travis_wait 90 ./.travis.build
+- travis_wait 90 ./.travis.build
 before_deploy:
-  - export RELEASE_PKG_FILE=$(ls ./pkg/*.deb)
-  - echo "deploying $RELEASE_PKG_FILE to GitHub releases"
+- export RELEASE_PKG_FILE=$(ls ./pkg/*.deb)
+- echo "deploying $RELEASE_PKG_FILE to GitHub releases"
 deploy:
   provider: releases
-  api_key:
-    - secure: "dIJufv7k6urVR0VG+iWxkVOKFQlxidIphw0wUcDWFEZaiV/5azEQ3TFomdrbM+3sg0mda+mpD+nKQ4rei1t6nx4zHd1uOChrm1rXiw6jkgqgJCg7NbIVJ53LuuptwVxX8useHPb13ocQPZELCdxGcWnj08Tc4a24CHUkPyod1M9KseFtNQZjgQ0DtfB446aW5AYoqwl8Oje5I+8ZY2zXeuFLPM1kyKCzHp3oM6Pj0cTjjQCmK0BxyWXEuXqFYwpNB7soj4sjCMN3BsOFaGHzzsVXDsssl0SR0btCrwFYBZG6AU9Fe1fzqLAezLWeL4+33Ztp3lACkgkHBpFAOXAGHPG0MIDbO5iTJYD7L5DpdQprh9li5um6i3Zg3gWDFgPqL7W7hqJ8VlDy/GM3BYTG40eDUa/ikVZvabEiyv+h2r9ufhhVxlrrLf5aFD/uNM2oz4nWQvHWx/I8HCXI0CVzlJWIC7Kwfw9ay0g6+zbWgfUIzPlLM73JZu35W6uSvQ8Gr6ozhHQ4stm7Nx8YUdkleGo9Exwn2B7XFpWFmw+pmQljWV/vRlkXdqWa0JY9jeNYZE557WplN6l4b3B8xuuhrT6qh5Ll81IFldBGhIo/5mXrgJHT244ymEbxywkjRkrSSbA7TDfQzaAOBwrugBUp9A+6KX1B7xO75Xdd1fi23/o="
   file_glob: true
   file: ./pkg/*.deb
   skip_cleanup: true
