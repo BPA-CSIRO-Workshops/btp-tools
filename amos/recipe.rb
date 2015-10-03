@@ -23,7 +23,7 @@ class AMOS < FPM::Cookery::Recipe
     make
   end
 
-  # Place package to install destination.
+  # Install
   def install
     make :install, 'DESTDIR' => destdir
   end
