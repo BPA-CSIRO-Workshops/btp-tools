@@ -19,7 +19,7 @@ class AMOS < FPM::Cookery::Recipe
     configure :prefix => prefix,
       :enable_minimus => 'no'
 
-    # Compile and build.
+    # Compile
     make
   end
 
