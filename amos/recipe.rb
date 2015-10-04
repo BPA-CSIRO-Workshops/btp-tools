@@ -8,7 +8,7 @@ class AMOS < FPM::Cookery::Recipe
   md5 '51ebe835c93eef9acd39101738b2048c'
   
   # Let's install build dependencies first.
-  build_depends ['curl', 'make', 'g++', 'libboost-all-dev', 'libqt4-dev', 'libxml-perl', 'libdbi-perl', 'libstatistics-descriptive-perl']
+  build_depends ['curl', 'make', 'gcc', 'g++', 'libboost-all-dev', 'libqt4-dev', 'libxml-perl', 'libdbi-perl', 'libstatistics-descriptive-perl']
 
   # Build:
   def build
