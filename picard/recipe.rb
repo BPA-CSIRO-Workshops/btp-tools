@@ -8,15 +8,17 @@ class Picard < FPM::Cookery::Recipe
   source "https://github.com/broadinstitute/picard/releases/download/#{version}/picard-tools-#{version}.zip"
   md5 '0f71cb71c90393e501b8ebc9f867dc0b'
 
-  # Let's install build dependencies first.
+  # Build Dependencies:
   build_depends ['curl', 'default-jre', 'default-jdk', 'ant']
+
+  # Runtime Dependencies:
   depends ['default-jre', 'default-jdk']
 
-  # Build.
+  # Build:
   def build
   end
 
-  # Install.
+  # Install:
   def install
     bin.install Dir["picard-tools-#{version}/*"]
   end
