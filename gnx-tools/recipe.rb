@@ -16,6 +16,7 @@ class GNXTools < FPM::Cookery::Recipe
     safesystem 'javac -d bin/ src/uk/ac/ebi/gnx/*'
     safesystem 'ant -f package.xml'
 
+    # Executable for GNX
     File.open('gnx', 'w', 0755) do |f|
       f.write <<-__EOF
 #!/bin/sh
