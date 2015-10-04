@@ -8,7 +8,7 @@ class Cufflinks < FPM::Cookery::Recipe
   md5 '7e693d182dcfda8aeef8523219ea9ea7'
 
   # Let's install build dependencies first.
-  build_depends ['curl']
+  build_depends ['curl', 'wget']
 
   # Build:  
   def build

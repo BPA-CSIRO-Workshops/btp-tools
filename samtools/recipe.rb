@@ -10,7 +10,7 @@ class SAMtools < FPM::Cookery::Recipe
   # Let's install build dependencies first.
   build_depends ['curl', 'zlib1g-dev', 'ncurses-dev']
 
-  # Build:
+  # Build
   def build
     make
   end
