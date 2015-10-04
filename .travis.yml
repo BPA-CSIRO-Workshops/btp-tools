@@ -18,3 +18,4 @@ deploy:
   file: ./pkg/*.deb
   on:
     repo: BPA-CSIRO-Workshops/btp-tools
+    tags: true
