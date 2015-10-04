@@ -12,8 +12,7 @@ before_install:
 script:
 - travis_wait 90 ./.travis.build
 before_deploy:
-- cd ./pkg 
-- export RELEASE_PKG_FILE=$(ls *.deb)
+- cd ./pkg && export RELEASE_PKG_FILE=$(ls *.deb)
 - echo "deploying ${RELEASE_PKG_FILE} to GitHub releases"
 - sudo chmod a+wr *.deb
 deploy:
@@ -21,7 +20,7 @@ deploy:
   api-key:
     secure: DP9EUyy/Q+lPq7tjW4t6vlzEwUc9ustDBHiRWa/h59FQx/NJA2cu6LDNam3rv/NqsouzLnVwjQiQUafPr6+iQOhyRS0MfJtjKw1m1BMhXUdoT9B9czZXhFfGIUqUQiphmQ4Z9heewJeIONipt90bgw1e+ItS3BcV4py9yGXRZqulXvfP+rZSktmGCyw35Z4BkiFpcxezx1vffVLAiDE6qXAnYJw2vPHuxv5NHMNMbWOliEJFYeZnl2p81woopBPoZyHM2SGyCsnoReJo7h60oi8dpdpJdI49Qm9dKRQ3fF0r+e+tM9eNj7DaCdhmEKNvNKSjVI2TCGwrYyFqd13MgZptIJNPn7CamSlvwom42c6qaQ2L9m/2mmDJS5+WZFMp+gzUfS50Bs3wtrz0tG2mA4W0ePoiUdjxOm7+zNX1hPmtG7RMSOo0WkDqSrw33x/08vv8SUbclHEkRcsSijWMu0ULEZGmp/njW2O/2e1VZN8XBTY3OMJflBDo9GANg+lDBTwGJcGhrfaHnlvoZ8IRwfSWA00xhwxE6cv9OJf8Pn08HUg0wfmDZWVk1pkemMDRROejA6xI/2RPkBLUqSqYvGP8Tx23lLHihaAjXf02no2ZK8m8rqG9ot9NQFjeBG5WebMQHdDrxLtTRmcJtJDPV7i/4F7qbeKbCG3BBpagctY=
   file_glob: true
-  file: *.deb
+  file: '*.deb'
   skip_cleanup: true
   on:
     tags: true
