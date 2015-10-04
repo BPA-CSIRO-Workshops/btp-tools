@@ -19,4 +19,3 @@ deploy:
   on:
     repo: BPA-CSIRO-Workshops/btp-tools
     tags: true
-    all_branches: true
