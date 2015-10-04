@@ -7,8 +7,8 @@ class AMOS < FPM::Cookery::Recipe
   source "http://sourceforge.net/projects/amos/files/amos/#{version}/amos-#{version}.tar.gz"
   md5 '51ebe835c93eef9acd39101738b2048c'
   
-  # Let's install build dependencies first.
-  build_depends ['curl', 'make', 'gcc', 'g++', 'libboost-all-dev', 'libqt4-dev', 'libxml-perl', 'libdbi-perl', 'libstatistics-descriptive-perl']
+  # Let's install build dependencies first:
+  build_depends ['curl', 'make', 'g++', 'libboost-all-dev', 'libqt4-dev', 'libxml-perl', 'libdbi-perl', 'libstatistics-descriptive-perl']
 
   # Build:
   def build
