@@ -7,14 +7,14 @@ class Cufflinks < FPM::Cookery::Recipe
   source "http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/cufflinks-#{version}.Linux_x86_64.tar.gz"
   md5 '7e693d182dcfda8aeef8523219ea9ea7'
 
-  # Let's install build dependencies first:
+  # Let's install build dependencies first.
   build_depends ['curl']
 
-  # Build:  
+  # Build:
   def build
   end
 
-  # Install:
+  # Install.
   def install
     bin.install ['cufflinks', 'cuffcompare', 'gffread', 'cuffmerge', 'cuffdiff', 'gtf_to_sam', 'cuffnorm', 'cuffquant']
   end
