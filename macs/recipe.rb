@@ -7,7 +7,7 @@ class MACS < FPM::Cookery::Recipe
   source "https://github.com/downloads/taoliu/MACS/MACS-#{version}.tar.gz"
   md5 '950dab09fe1335c8bbb34a896c21e3e2'
 
-  # Let's install build dependencies first.
+  # Let's install build dependencies first:
   build_depends ['curl', 'python']
   depends ['python']
 
