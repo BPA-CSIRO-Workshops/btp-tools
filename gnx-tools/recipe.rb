@@ -6,12 +6,13 @@ class GNXTools < FPM::Cookery::Recipe
   homepage 'https://github.com/mh11/gnx-tools'
   source 'https://github.com/mh11/gnx-tools.git', :with => :git
 
-  # Let's install build dependencies first.
+  # Let's install build dependencies first:
   build_depends ['default-jre', 'default-jdk', 'ant', 'git']
   depends ['default-jre', 'default-jdk']
 
   # Build:
   def build
+    # Prepare:
     safesystem 'mkdir bin'
     safesystem 'javac -d bin/ src/uk/ac/ebi/gnx/*'
     safesystem 'ant -f package.xml'
