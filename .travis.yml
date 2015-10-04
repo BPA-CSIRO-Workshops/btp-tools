@@ -18,5 +18,5 @@ deploy:
   file: ./pkg/*.deb
   on:
     repo: BPA-CSIRO-Workshops/btp-tools
-    branch: master
+    all_branches: true
     tags: true
