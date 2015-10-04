@@ -12,7 +12,7 @@ class AMOS < FPM::Cookery::Recipe
 
   # Build:
   def build
-    # Prepare:
+    # Extra Prepare:
     safesystem 'sed -i "1i#include <getopt.h>" src/Align/find-tandem.cc'
 
     # Configure:
