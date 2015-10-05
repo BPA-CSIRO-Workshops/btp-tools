@@ -9,10 +9,6 @@ rvm:
 before_install:
 - gem install fpm-cookery
 - gem install executable-hooks
-install:
-- git clone https://github.com/$TRAVIS_REPO_SLUG.git $TRAVIS_REPO_SLUG
-- cd $TRAVIS_REPO_SLUG
-- git checkout -qf $TRAVIS_COMMIT
 script:
 - travis_wait 90 ./.travis.build
 deploy:
