@@ -7,15 +7,15 @@ class SAMtools < FPM::Cookery::Recipe
   source "http://sourceforge.net/projects/samtools/files/samtools/#{version}/samtools-#{version}.tar.bz2"
   md5 '71dab132e21c0766f0de84c2371a9157'
 
-  # Let's install build dependencies first.
+  # Let's install build dependencies first:
   build_depends ['curl', 'zlib1g-dev', 'ncurses-dev']
 
-  # Build.
+  # Build:
   def build
     make
   end
 
-  # Install.
+  # Install:
   def install
     bin.install 'samtools'
     lib.install 'libbam.a'
