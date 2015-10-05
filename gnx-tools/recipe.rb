@@ -7,7 +7,7 @@ class GNXTools < FPM::Cookery::Recipe
   source 'https://github.com/mh11/gnx-tools.git', :with => :git
 
   # Let's install build dependencies first:
-  build_depends ['default-jre', 'default-jdk', 'ant', 'git']
+  build_depends ['default-jre', 'default-jdk', 'ant', 'git', 'wget']
   depends ['default-jre', 'default-jdk']
 
   # Build:
