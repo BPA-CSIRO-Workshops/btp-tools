@@ -1,8 +1,4 @@
 language: ruby
-branches:
-  only:
-    - master
-    - /v\d+\.\d+\.\d+/
 sudo: true
 env:
   global:
@@ -22,5 +18,3 @@ deploy:
   file: ./pkg/*.deb
   on:
     repo: BPA-CSIRO-Workshops/btp-tools
-    tags: true
-    all_branches: true
