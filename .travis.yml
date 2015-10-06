@@ -16,6 +16,7 @@ deploy:
   api_key:
     secure: nlRtboEAB1Lx9oxHg+hQB3QMLxVJPy5C4yus6hBZaTHGba5fL3iegPYUZYpWgTE4fQJ0cFaItDSvMqR/YsimunZ6TppsOPagfcZJ5aS1RHQmvp6+nW5AG38Ll8Xve/PLvwdt+66wokQmeIfrZgk9fzwRKlFycm/yXcoBmjpq+MN8ehekM5Tc1elKEyKYPHGplYjNSk/JOryWBEiLeM7zRtmT43SDWALlirirl6dT/6Au/QZZHbu26lrvw9ujRKLT5X71hJe7+ZVSdVCHzRZok378yfTTvPoWi0/5TtU1o8umr/pEFFoI1ZXACKHG+y1p9nIEdtbWbI27d43YlxzCEWTo62BUkl3SIP06RghuU3r5WVSDdeeyq7ojDCQkfbgyc6WvFrnPQzFdm55o/Vhgm9k+v1QxMAO4MzXwkQvrFguhsxoIwth/7+qGs5CBDB2Vds2fNhycRqKWT8fkQpkd0Fl6GP65txDRPRH6+1Z8KJ3qLzf+Gp5z86S1eF2/W25qizhIvi2KdvzwRbYMSfBZEfR+UixxsFMZeeePTQGIBmilfQqed6lYz2owok5WKJa+Okv8IkURGjqLbSpHWUkTvVKldFc0guL9chhtI53r6NFNIAgNa4209sletzhCEX932MWvUI10vL+2MR14N5dsFzT1wPrlwUQX0Y6FBgHUUBM=
   file: ./pkg/*.deb
+  skip_cleanup: true
   on:
     repo: BPA-CSIRO-Workshops/btp-tools
     tags: true
