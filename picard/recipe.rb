@@ -4,7 +4,6 @@ class Picard < FPM::Cookery::Recipe
   version '1.138' 
   revision 0
   homepage 'http://broadinstitute.github.io/picard/'
-  source "https://swift.rc.nectar.org.au:8888/v1/AUTH_809/Tools/picard-tools-#{version}.zip"
   source "https://github.com/broadinstitute/picard/releases/download/#{version}/picard-tools-#{version}.zip"
   md5 '0f71cb71c90393e501b8ebc9f867dc0b'
 

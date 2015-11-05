@@ -6,7 +6,7 @@ tool_name='bowtie'
 md5='ba4f40528e4eb38976a7ed4bf7c12ca6'
 
 function md5check {
-  md5sum -c - <<< "$1 $2"
+  md5sum -c - <<< "$1  $2"
   if [ $? -ne 0 ]; then
     echo "MD5 mismatch on downloaded file, exiting ..."
     exit
