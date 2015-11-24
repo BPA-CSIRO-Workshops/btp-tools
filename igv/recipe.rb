@@ -9,7 +9,7 @@ class IGV < FPM::Cookery::Recipe
 
   # Let's install build dependencies first.
   build_depends ['unzip']
-  depends ['curl', 'default-jre', 'default-jdk', 'icnsutils']
+  depends ['default-jre', 'default-jdk']
 
   # Build:
   def build

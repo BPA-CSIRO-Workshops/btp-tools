@@ -8,7 +8,7 @@ class IGVTools < FPM::Cookery::Recipe
   md5 '1369e1b4a0628848c708835f4cc601ca'
 
   # Let's install build dependencies first.
-  depends ['curl', 'default-jre', 'default-jdk']
+  depends ['default-jre', 'default-jdk']
 
   # Build:
   def build

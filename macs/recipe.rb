@@ -9,7 +9,6 @@ class MACS < FPM::Cookery::Recipe
 
   # Let's install build dependencies first:
   build_depends ['curl', 'python']
-  depends ['python']
 
   # Build:
   def build
