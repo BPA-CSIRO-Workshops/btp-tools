@@ -27,6 +27,8 @@ biocLite("limma")
 biocLite("gplots")
 biocLite("RColorBrewer")
 biocLite("GO.db")
+biocLite("biomaRt")
+biocLite("org.Hs.eg.db")
       __EOF
     end
 
