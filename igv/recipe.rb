@@ -1,11 +1,11 @@
 class IGV < FPM::Cookery::Recipe
   description 'IGV is a high-performance visualization tool for interactive exploration of large, integrated genomic datasets.'
   name 'igv'
-  version '2.3.59' 
+  version '2.3.75' 
   revision 0
   homepage 'https://www.broadinstitute.org/igv/'
   source "http://data.broadinstitute.org/igv/projects/downloads/IGV_#{version}.zip"
-  md5 'b9610afb3bdca99defaef9d3bbf3bc40'
+  md5 '03763de899b80fee90b36007165e894f'
 
   # Let's install build dependencies first.
   build_depends ['unzip']
