@@ -4,23 +4,18 @@ class Bowtie < FPM::Cookery::Recipe
   version '1.1.1' 
   revision 0
   homepage 'http://bowtie-bio.sourceforge.net/index.shtml'
-  source "http://sourceforge.net/projects/bowtie-bio/files/bowtie/#{version}/bowtie-#{version}-src.zip"
-  md5 'ba4f40528e4eb38976a7ed4bf7c12ca6'
+  source "https://sourceforge.net/projects/bowtie-bio/files/bowtie/#{version}/bowtie-#{version}-linux-x86_64.zip"
+  md5 '037b012e964cab9ba6bf37ca973f5e13'
 
   # Let's install build dependencies first.
-  build_depends ['curl', 'g++', 'unzip', 'wget']
+  build_depends ['curl', 'unzip', 'wget']
 
   # Build:
   def build
-    Dir.chdir "bowtie-#{version}" do
-      make
-    end
   end
 
   # Install:
   def install
-    Dir.chdir "bowtie-#{version}" do
-      bin.install ['bowtie', 'bowtie-align-s', 'bowtie-align-l', 'bowtie-build', 'bowtie-build-s', 'bowtie-build-l', 'bowtie-inspect', 'bowtie-inspect-s', 'bowtie-inspect-l']
-    end
+    bin.install Dir["bowtie-#{version}/bowtie*"]
   end
 end
