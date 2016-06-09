@@ -24,7 +24,7 @@ class Blat < FPM::Cookery::Recipe
   # Install:
   def install
     Dir.chdir 'blatSrc/bin' do
-      bin.install ['blat', 'faToNib', 'faToTwoBit', 'gfClient', 'gfServer', 'nibFrag', 'pslPretty', 'pslReps', 'pslSort', 'twoBitInfo', 'twoBitToFa']
+      bin.install ['blat', 'faToNib', 'faToTwoBit', 'gfClient', 'gfServer', 'nibFrag', 'twoBitInfo', 'twoBitToFa']
     end
   end
 end
