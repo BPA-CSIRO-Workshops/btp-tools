@@ -33,8 +33,7 @@ Categories=Graphics;Science;Math
       end
     end
     
-    etc('skel/Desktop').mkdir
-    etc('skel/Desktop').install Dir["IGV_#{version}/IGV.desktop"]
+    share('applications/').install Dir["IGV_#{version}/IGV.desktop"]
     share('icons/hicolor/48x48/apps/').install workdir('igv_icon.png')
     bin.install Dir["IGV_#{version}/*"]
   end
