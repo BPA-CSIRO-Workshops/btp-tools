@@ -16,6 +16,6 @@ class Tophat2 < FPM::Cookery::Recipe
 
   # Install:
   def install
-    bin.install ['tophat', 'tophat2']
+    bin.install ['tophat', 'tophat2', 'bam2fastx', 'bam_merge', 'bed_to_juncs', 'contig_to_chr_coords', 'fix_map_ordering', 'gtf_juncs', 'gtf_to_fasta', 'juncs_db', 'long_spanning_reads', 'map2gtf', 'prep_reads', 'sam_juncs', 'samtools_0.1.18', 'segment_juncs', 'sra_to_solid', 'tophat-fusion-post', 'tophat_reports']
   end
 end
