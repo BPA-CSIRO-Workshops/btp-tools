@@ -16,6 +16,7 @@ class Bowtie2 < FPM::Cookery::Recipe
 
   # Install:
   def install
+    chmod 0755, Dir["bowtie2-#{version}/bowtie*"]
     bin.install Dir["bowtie2-#{version}/bowtie*"]
   end
 end
