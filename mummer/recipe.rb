@@ -8,7 +8,7 @@ class MUMmer < FPM::Cookery::Recipe
   md5 'f2422b3d2638dba4baedb71b1acdffa2'
 
   # Let's install build dependencies first.
-  build_depends ['make', 'csh', 'g++']
+  build_depends ['make', 'csh', 'g++', 'gcc']
 
   # Build:
   def build
@@ -18,6 +18,6 @@ class MUMmer < FPM::Cookery::Recipe
 
   # Install:
   def install
-    bin.install ['mummer', 'nucmer', 'promer', 'run-mummer1', 'run-mummer3']
+    bin.install ['annotate', 'combineMUMs', 'delta-filter', 'dnadiff', 'exact-tandems', 'gaps', 'mapview', 'mgaps', 'mummerplot', 'mummer', 'nucmer', 'nucmer2xfig', 'promer', 'repeat-match', 'run-mummer1', 'run-mummer3', 'show-aligns', 'show-coords', 'show-diff', 'show-snps', 'show-tiling']
   end
 end
