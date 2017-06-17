@@ -17,5 +17,6 @@ class SPAdes < FPM::Cookery::Recipe
   # Install:
   def install
     bin.install Dir['bin/*']
+    share.install Dir["share/*"]
   end
 end
