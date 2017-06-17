@@ -16,12 +16,20 @@ class Pilon < FPM::Cookery::Recipe
 
   # Install:
   def install
-    share('java').install 'pilon-1.22.jar'
+    File.open('pilon', 'w', 0755) do |f|
+      f.write <<-__EOF
+#!/bin/sh
+prefix=`dirname $(readlink $0 || echo $0)`
+java -Xmx4G -jar "$prefix"/pilon.jar "$@"
+      __EOF
+    end
 
-    link_target = share('java/pilon.jar')
+    bin.install 'pilon'
+    bin.install 'pilon-1.22.jar'
+    link_target = bin('pilon.jar')
 
     with_trueprefix do
-      ln_s share('java/pilon-1.22.jar'), link_target
+      ln_s bin('pilon-1.22.jar'), link_target
     end
   end
 end
