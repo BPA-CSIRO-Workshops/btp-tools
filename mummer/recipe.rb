@@ -18,6 +18,39 @@ class MUMmer < FPM::Cookery::Recipe
 
   # Install:
   def install
+    inline_replace 'dnadiff' do |s|
+      s.gsub! "#{builddir}/MUMmer3.23", '/usr/bin'
+    end
+
+    inline_replace 'exact-tandems' do |s|
+      s.gsub! "#{builddir}/MUMmer3.23", '/usr/bin'
+    end
+
+    inline_replace 'mapview' do |s|
+      s.gsub! "#{builddir}/MUMmer3.23", '/usr/bin'
+    end
+
+    inline_replace 'mummerplot' do |s|
+      s.gsub! "#{builddir}/MUMmer3.23", '/usr/bin'
+    end
+
+    inline_replace 'nucmer' do |s|
+      s.gsub! "#{builddir}/MUMmer3.23", '/usr/bin'
+    end
+
+    inline_replace 'promer' do |s|
+      s.gsub! "#{builddir}/MUMmer3.23", '/usr/bin'
+    end
+
+    inline_replace 'run-mummer1' do |s|
+      s.gsub! "#{builddir}/MUMmer3.23", '/usr/bin'
+    end
+
+    inline_replace 'run-mummer3' do |s|
+      s.gsub! "#{builddir}/MUMmer3.23", '/usr/bin'
+    end
+
+    bin.install Dir['scripts', 'aux_bin']
     bin.install ['annotate', 'combineMUMs', 'delta-filter', 'dnadiff', 'exact-tandems', 'gaps', 'mapview', 'mgaps', 'mummerplot', 'mummer', 'nucmer', 'nucmer2xfig', 'promer', 'repeat-match', 'run-mummer1', 'run-mummer3', 'show-aligns', 'show-coords', 'show-diff', 'show-snps', 'show-tiling']
   end
 end
