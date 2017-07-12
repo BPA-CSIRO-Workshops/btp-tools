@@ -13,7 +13,7 @@ class RBase < FPM::Cookery::Recipe
   # Build. 
   def build
     # Configure and build R.
-    configure :prefix => prefix
+    configure :prefix => prefix, :enable_R_shlib => 'yes'
     make
 
     # Create R libraries install file.
