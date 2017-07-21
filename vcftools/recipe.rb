@@ -18,6 +18,6 @@ class VCFtools < FPM::Cookery::Recipe
   # Install:
   def install
     bin.install Dir['bin/*']
-    #prefix.install Dir['binaries', 'db', 'doc', 'perl5']
+    share('perl5').install Dir['lib/perl5/site_perl/*']
   end
 end
