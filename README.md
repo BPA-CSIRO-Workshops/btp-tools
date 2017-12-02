@@ -23,7 +23,7 @@ The things you need to have installed in order to use the recipes and build `deb
 On an Ubuntu system, this can be achieved with the following few commands:
 
 ```bash
-apt-get install -y rubygems
+apt-get install -y rubygems ruby-dev
 gem install fpm-cookery
 ```
 
